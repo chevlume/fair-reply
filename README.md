@@ -165,11 +165,11 @@ Reply coverage is rules-based. A point counts as answered when the public agent 
 
 The 6/30 run missed a repeated charge, gas or lights going out, a stuck name change, a polite written protest, and it treated "si esto fuera una queja" and "if this were a formal complaint" as complaints. Those are classes of phrasing, not single sentences kept as special cases.
 
-Install and a copy-paste demo script are in [docs/DEMO.md](docs/DEMO.md). This repository is not registered or deployed, and this guide does not mean anyone has logged in.
+Install and a copy-paste demo script are in [docs/DEMO.md](docs/DEMO.md). The app is deployed to the Forge production environment, and judges install it from the installation link in the Devpost submission.
 
-## Install on a site later
+## Deploy your own copy
 
-You need Node.js 22, a Forge API token, and a Jira Service Management Cloud site. This repository is not registered or deployed. `forge lint` asks for `forge login`, so the manifest was checked against the public module reference rather than the CLI.
+You need Node.js 22, a Forge API token, and a Jira Service Management Cloud site. To deploy your own copy, run `forge register` first so the app gets an app ID of your own.
 
 The committed `app.id` is a placeholder (`11111111-1111-4111-8111-111111111111`). Register the app once so the CLI writes a real id:
 

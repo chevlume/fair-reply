@@ -28,9 +28,9 @@ Intellectual property, same rules page:
 
 > All Submissions remain the intellectual property of the individuals or organizations that developed them. By submitting a Submission, Entrants agree that the Sponsor will have a fully paid, non-exclusive license to use such Submission for judging the Submission. […] Some Submission components may be displayed to the public. Other Submission materials may be viewed by the Sponsor, Devpost, and Judges for screening and evaluation.
 
-The owner will keep this repository private and grant judges access directly. That is consistent with the text above. It is not a substitute for the installation link. If judges cannot install the app, the functionality requirement is not met, whether or not they can read the code.
+This repository is public, so judges can read the code without being granted access. That is consistent with the text above. It is not a substitute for the installation link. If judges cannot install the app, the functionality requirement is not met, whether or not they can read the code.
 
-This repository is MIT licensed (`LICENSE`, copyright Chevlume, 2026). The rules do not require a particular licence. They allow open source if the entrant complies with those licences. MIT is the licence in this repo. Sharing the repo privately does not remove that licence from people who receive a copy.
+This repository is MIT licensed (`LICENSE`, copyright Chevlume, 2026). The rules do not require a particular licence. They allow open source if the entrant complies with those licences. MIT is the licence in this repo. Anyone can read and reuse the code under that licence.
 
 The committed `app.id` is still the placeholder `ari:cloud:ecosystem::app/11111111-1111-4111-8111-111111111111`. Judges cannot install that id. The owner registers the app locally, deploys, and creates the distribution link. Do not paste a link until that link exists.
 
@@ -138,7 +138,7 @@ Official limit, from the 2026 rules: the video should be less than five minutes,
 - [ ] Testing instructions in the form match the video, including the company-managed validator step if the video shows a blocked Resolve.
 - [ ] Category: Apps for Specialized Industries. Bonus: Best Agents. Do not tick MCP, Teamwork Graph, or Marketplace.
 - [ ] Devpost text in English. Author name on the form: Chevlume.
-- [ ] Keep the repository private and grant judges access directly. The rules quoted above do not require a public repo and do not name judge Git accounts. The installation link is still required.
+- [ ] Link the public repository in the submission. The rules quoted above do not require a repo, so the installation link is still required.
 - [ ] Do not describe the current 40/40 eval lines as blind.
 
 ## Honest limits
