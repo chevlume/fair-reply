@@ -1,0 +1,196 @@
+# Fair Reply — complaint clock for Jira Service Management.
+# Module types below are the documented Forge modules as of the 2026 manifest reference.
+# Docs: https://developer.atlassian.com/platform/forge/manifest-reference/
+#
+# The app id is a placeholder. Run `forge register` before the first deploy
+# and let the CLI replace it. Do not deploy this placeholder id.
+
+app:
+  id: ari:cloud:ecosystem::app/11111111-1111-4111-8111-111111111111
+  runtime:
+    name: nodejs22.x
+    memoryMB: 512
+
+permissions:
+  scopes:
+    # Read issues, comments, and product events.
+    # https://developer.atlassian.com/platform/forge/manifest-reference/scopes-product-jira/
+    - read:jira-work
+    # Write the fairreply.case issue property and internal reminder comments.
+    - write:jira-work
+    # Required for a Jira admin to attach the workflow validator.
+    # https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-workflow-validator/
+    - manage:jira-configuration
+    # Key-value store. Required by @forge/kvs. Without it, kvs.set returns PRINCIPAL_NOT_AUTHORIZED.
+    # https://developer.atlassian.com/platform/forge/storage-reference/kvs/
+    - storage:app
+
+modules:
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-issue-panel/
+  jira:issuePanel:
+    - key: fair-reply-panel
+      resource: panel
+      resolver:
+        function: panel-resolver
+      render: native
+      title: Fair Reply
+      icon: resource:assets;icon.svg
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/trigger/
+  # Events: https://developer.atlassian.com/platform/forge/events-reference/jira/
+  trigger:
+    - key: fair-reply-trigger
+      function: enqueue-issue
+      events:
+        - avi:jira:created:issue
+        - avi:jira:commented:issue
+        - avi:jira:updated:issue
+      filter:
+        ignoreSelf: true
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/consumer/
+  # Queue name must match Queue({ key }) in src/runtime.ts.
+  consumer:
+    - key: fair-reply-consumer
+      queue: fair-reply-queue
+      function: consume-case
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-workflow-validator/
+  # Preview module. Stable enough for production per Atlassian, still preview.
+  # An admin must add it to the Resolve and Close transitions. See README.
+  jira:workflowValidator:
+    - key: fair-reply-validator
+      name: Block resolve while complaint points are unanswered
+      description: >
+        Blocks a resolve or close transition when Fair Reply has detected or
+        confirmed a complaint and a public reply does not yet answer every
+        customer point. A Jira admin must add the validator to the transition.
+        Decision support only, not legal advice.
+      function: validate-reply
+      projectTypes:
+        - company-managed
+        - team-managed
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/scheduled-trigger/
+  # Documented intervals are fiveMinute, hour, day, and week. fiveMinute is the shortest.
+  # An app may declare only one fiveMinute trigger. That cadence can post before a 2-hour continuity deadline.
+  scheduledTrigger:
+    - key: fair-reply-schedule
+      function: remind-deadlines
+      interval: fiveMinute
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/rovo-agent/
+  # Name is 18 characters (limit 30). Needs a site with Rovo. See README.
+  rovo:agent:
+    - key: complaints-officer
+      name: Complaints Officer
+      description: >
+        Decision-support agent for complaint status, deadlines, reply coverage,
+        and acknowledgement drafts. It does not send replies and it is not legal advice.
+      icon: resource:assets;icon.svg
+      prompt: resource:assets;prompts/complaints-officer.txt
+      conversationStarters:
+        - What is the complaint status of this request?
+        - Which complaints are close to their deadline?
+        - Does the public reply cover every customer point?
+        - Draft an acknowledgement. Do not send it.
+      actions:
+        - get-complaint-status
+        - list-at-risk-complaints
+        - check-reply-coverage
+        - draft-acknowledgement
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/rovo-action/
+  action:
+    - key: get-complaint-status
+      name: Get complaint status
+      function: rovo-status
+      actionVerb: GET
+      description: >
+        Read one Fair Reply case with the same panel state, clock, and citation lines.
+        The reply checked was appears only when that sentence covered the point.
+        An open point says Checked, did not cover. Ready to close allows the transition. A person resolves.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          required: true
+          description: Key of the Jira or Jira Service Management work item, such as SUP-12.
+    - key: list-at-risk-complaints
+      name: List at-risk complaints
+      function: rovo-at-risk
+      actionVerb: GET
+      description: >
+        List stored complaints inside the horizon that are not ready to close,
+        soonest deadline first. Refreshes at most eight stale cases per call.
+        Reminders are internal notes and do not send the customer reply.
+      inputs:
+        horizonHours:
+          title: Horizon hours
+          type: integer
+          required: false
+          description: How many hours ahead counts as at risk. Defaults to 48.
+    - key: check-reply-coverage
+      name: Check reply coverage
+      function: rovo-coverage
+      actionVerb: GET
+      description: >
+        Check each customer point. A later public comment can cover a point an earlier comment left open.
+        Covering citations and Checked, did not cover use the same lines as the panel.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          required: true
+          description: Key of the work item whose reply coverage should be checked.
+    - key: draft-acknowledgement
+      name: Draft acknowledgement
+      function: rovo-draft
+      actionVerb: GET
+      description: >
+        Draft an acknowledgement for a person to edit. sent, posted, and customerReplySent stay false.
+        This action does not post a public comment or send a customer reply.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          required: true
+          description: Key of the work item the draft is about.
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/llm/
+  # Declared so a later opt-in does not need a manifest redesign.
+  # The default runtime path does not call @forge/llm. See FAIR_REPLY_LLM in the README.
+  llm:
+    - key: fair-reply-llm
+      model:
+        - claude
+
+  # https://developer.atlassian.com/platform/forge/manifest-reference/modules/function/
+  # Function keys are at most 23 characters.
+  function:
+    - key: panel-resolver
+      handler: index.handler
+    - key: enqueue-issue
+      handler: trigger.handler
+    - key: consume-case
+      handler: consumer.handler
+      timeoutSeconds: 120
+    - key: validate-reply
+      handler: validator.handler
+    - key: remind-deadlines
+      handler: schedule.handler
+      timeoutSeconds: 120
+    - key: rovo-status
+      handler: actions.getComplaintStatus
+    - key: rovo-at-risk
+      handler: actions.listAtRisk
+    - key: rovo-coverage
+      handler: actions.checkCoverage
+    - key: rovo-draft
+      handler: actions.draftAck
+
+resources:
+  - key: panel
+    path: src/frontend/index.tsx
+  - key: assets
+    path: static

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "hd-es-h1",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Consulta de un cargo repetido",
+    "description": "Hola, una duda de la cuenta. Me lo están volviendo a cargar aunque ya lo pagué en caja. Quiero el reintegro de 19 € y el extracto corregido.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Me lo están volviendo a cargar aunque ya lo pagué en caja."
+  },
+  {
+    "id": "hd-es-h2",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Consulta del edificio",
+    "description": "¿Hay alguna incidencia? Desde el viernes no tenemos gas en la comunidad.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Desde el viernes no tenemos gas en la comunidad."
+  },
+  {
+    "id": "hd-es-h3",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Seguimiento del titular",
+    "description": "Van tres semanas y el cambio de titular sigue parado. Necesito que alguien lo desbloquee.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Van tres semanas y el cambio de titular sigue parado."
+  },
+  {
+    "id": "hd-es-h4",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Cifra del contador",
+    "description": "La cifra que tomaron no cuadra con lo que aparece cobrado. Pedid que lo revisen, por favor.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "La cifra que tomaron no cuadra con lo que aparece cobrado."
+  },
+  {
+    "id": "hd-es-h5",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Portal a oscuras",
+    "description": "Se fue la luz del portal a las siete y seguimos a oscuras. ¿Podéis decirnos si es cosa vuestra?",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Se fue la luz del portal a las siete y seguimos a oscuras."
+  },
+  {
+    "id": "hd-es-h6",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Dos asuntos",
+    "description": "Perdón por insistir. Aun así el cargo de 27 € está mal. También hace falta la cita del técnico que prometisteis.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Aun así el cargo de 27 € está mal."
+  },
+  {
+    "id": "hd-es-e1",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Escrito cortés",
+    "description": "Les ruego que tomen nota de mi protesta: el cargo de este mes es indebido y pido que lo rectifiquen.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Les ruego que tomen nota de mi protesta: el cargo de este mes es indebido y pido que lo rectifiquen."
+  },
+  {
+    "id": "hd-es-e2",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Constancia del agua",
+    "description": "Dejo constancia de que el agua del edificio estuvo cortada toda la mañana y pido una explicación.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Dejo constancia de que el agua del edificio estuvo cortada toda la mañana y pido una explicación."
+  },
+  {
+    "id": "hd-es-e3",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Escrito sobre la baja",
+    "description": "Esto es una protesta formal por la baja que nadie tramita desde marzo.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Esto es una protesta formal por la baja que nadie tramita desde marzo."
+  },
+  {
+    "id": "hd-es-e4",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Dos peticiones",
+    "description": "Mi escrito es claro. Devuélvanme los 12 € cobrados de más. Y envíenme el cálculo por escrito.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Devuélvanme los 12 € cobrados de más."
+  },
+  {
+    "id": "hd-es-n1",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Solo el horario",
+    "description": "Esto no es una queja, solo una pregunta: ¿a qué hora cierra la oficina?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-es-n2",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Copia del contrato",
+    "description": "Si esto fuera una queja lo diría. Solo necesito una copia del contrato.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-es-n3",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Significado de una línea",
+    "description": "¿Qué significa el concepto de peaje en el recibo? No afirmo que esté mal, solo quiero entenderlo.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-es-n4",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Comentario de la aplicación",
+    "description": "La aplicación nueva va lenta, pero no vengo a poner una queja. Solo lo comento por si os sirve.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-es-n5",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Ya resuelto",
+    "description": "Gracias, ya está todo en orden y no hace falta que me llaméis.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-en-h1",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Question about a repeated payment",
+    "description": "Hi, a question about the account. You took the payment again even though I paid at the counter. I want those 19 EUR returned and the statement corrected.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "You took the payment again even though I paid at the counter."
+  },
+  {
+    "id": "hd-en-h2",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Building question",
+    "description": "Any idea what is going on? The gas has been off in the building since Friday morning.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "The gas has been off in the building since Friday morning."
+  },
+  {
+    "id": "hd-en-h3",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Name change follow-up",
+    "description": "It has been three weeks and the name change is still stuck. Please have someone unblock it.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "It has been three weeks and the name change is still stuck."
+  },
+  {
+    "id": "hd-en-h4",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Reading versus account",
+    "description": "The figure they read does not square with what was taken from my account. Please have it looked at.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "The figure they read does not square with what was taken from my account."
+  },
+  {
+    "id": "hd-en-h5",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Stairwell",
+    "description": "The lights in the stairwell went out at seven and we are still in the dark. Is that on your side?",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "The lights in the stairwell went out at seven and we are still in the dark."
+  },
+  {
+    "id": "hd-en-h6",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Two matters",
+    "description": "Sorry to chase. Even so the 27 EUR charge is wrong. The promised engineer visit is also still outstanding.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Even so the 27 EUR charge is wrong."
+  },
+  {
+    "id": "hd-en-e1",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Polite note",
+    "description": "Please record my written protest: this month's debit is undue and I ask you to correct it.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Please record my written protest: this month's debit is undue and I ask you to correct it."
+  },
+  {
+    "id": "hd-en-e2",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Record of the supply",
+    "description": "I am putting on record that the building had no gas all morning and I want an explanation.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "I am putting on record that the building had no gas all morning and I want an explanation."
+  },
+  {
+    "id": "hd-en-e3",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Note about cancellation",
+    "description": "This is a written protest because nobody is processing my cancellation from March.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "This is a written protest because nobody is processing my cancellation from March."
+  },
+  {
+    "id": "hd-en-e4",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Two requests",
+    "description": "My note is plain. Return the extra 12 EUR that was taken. Also send the calculation in writing.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Return the extra 12 EUR that was taken."
+  },
+  {
+    "id": "hd-en-n1",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Desk hours",
+    "description": "This is not a complaint I just have a question about when the desk closes.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-en-n2",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Contract copy",
+    "description": "If this were a formal complaint I would say so. I only need a copy of the contract.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-en-n3",
+    "lang": "en",
+    "kind": "none",
+    "summary": "What a line means",
+    "description": "What does the network fee line on the bill mean? I am not saying it is wrong. I only want to understand it.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-en-n4",
+    "lang": "en",
+    "kind": "none",
+    "summary": "App comment",
+    "description": "The new app is slow, but I am not here to file a formal complaint. I am only sharing a comment.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "hd-en-n5",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Already sorted",
+    "description": "Thanks, everything is in order and there is no need to call me.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  }
+]

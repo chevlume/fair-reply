@@ -1,0 +1,743 @@
+[
+  {
+    "id": "R4-ES-01",
+    "lang": "es",
+    "summary": "Duda sobre la lectura del contador",
+    "description": "Buenas. Me ha llegado la factura del agua del bimestre y pone 48 m3. Somos dos personas y llevamos un mes fuera por trabajo, el piso cerrado. El bimestre anterior fueron 11 m3. ¿Me pueden decir de dónde sale esa cifra y corregirla?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "pone 48 m3"
+    },
+    "notes": "Etiquetada como duda; disputa consumo facturado.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "agua",
+      "lectura"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-02",
+    "lang": "es",
+    "summary": "Sin luz en toda la calle desde las 6",
+    "description": "Desde las seis de la mañana no tenemos electricidad en el portal ni en el resto de la calle Almendros. Tengo a mi madre con oxígeno a pilas. ¿Cuándo vuelve?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "no tenemos electricidad en el portal"
+    },
+    "notes": "Corte actual de suministro.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "electricidad",
+      "vulnerable"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-03",
+    "lang": "es",
+    "summary": "Pregunta: cambio de titular",
+    "description": "Hola, he comprado la vivienda y quiero poner el contrato del gas a mi nombre. ¿Qué documentos necesito y cuánto tarda?",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Consulta pura.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "gas",
+      "tramite"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-04",
+    "lang": "es",
+    "summary": "Reclamación por cobro duplicado",
+    "description": "Presento reclamación: en el extracto del banco aparecen dos cargos de 62,30 € con fecha 3 de octubre por la misma factura de fibra. Solicito la devolución de uno de ellos y que me envíen el justificante.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "dos cargos de 62,30 €"
+    },
+    "notes": "Devolución + justificante.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "telecom",
+      "duplicado"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-05",
+    "lang": "es",
+    "summary": "La app no me deja entrar",
+    "description": "Desde ayer la aplicación da error 503 al iniciar sesión. Quiero ver mis facturas. Pongo queja porque es la tercera vez este mes.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "la aplicación da error 503 al iniciar sesión"
+    },
+    "notes": "App caída NO es outage; es queja general.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "canal-digital",
+      "trampa-outage"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-06",
+    "lang": "es",
+    "summary": "Contenedor sin vaciar dos semanas",
+    "description": "El contenedor de orgánico de la esquina de Pintor Sorolla con Feria lleva dos semanas sin recogerse. Huele fatal y hay ratas. Además el de vidrio está roto por un lado.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "lleva dos semanas sin recogerse"
+    },
+    "notes": "Dos puntos: recogida y contenedor roto.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "residuos"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-07",
+    "lang": "es",
+    "summary": "Felicitación al técnico",
+    "description": "Quería agradecer a Sergio, el técnico que vino el martes a revisar la caldera. Fue puntual y lo explicó todo muy bien.",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Cumplido.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "gas",
+      "elogio"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-08",
+    "lang": "es",
+    "summary": "Llevo tres días sin agua caliente... y sin gas",
+    "description": "Desde el domingo no llega gas a la vivienda; la caldera marca fallo de presión de entrada y el vecino de enfrente tiene lo mismo. Necesito que venga alguien hoy y que me digan si me descontarán estos días.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "no llega gas a la vivienda"
+    },
+    "notes": "Corte en curso + compensación.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "gas",
+      "compensacion"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-09",
+    "lang": "es",
+    "summary": "Reclamación: la permanencia no era así",
+    "description": "Quiero reclamar. Al contratar me dijeron por teléfono que no había permanencia y ahora, al pedir la baja, me cobran una penalización de 150 €. Pido que anulen la penalización y que me den la grabación de la llamada.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "me cobran una penalización de 150 €"
+    },
+    "notes": "Cargo disputado + grabación.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "telecom",
+      "permanencia"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-10",
+    "lang": "es",
+    "summary": "Mensaje de mi vecina",
+    "description": "Les reenvío lo que me dijo mi vecina del 2ºB: 'a mí me han cortado la luz sin avisar'. Yo no tengo ningún problema, solo se lo comento por si les sirve.",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Palabras de un tercero, sin problema propio.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "tercero"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-11",
+    "lang": "es",
+    "summary": "Siniestro sin respuesta",
+    "description": "Abrí el parte por la fuga del baño el 2 de septiembre y nadie me ha llamado ni ha venido el perito. Ya he llamado cuatro veces. Esto no puede ser.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "nadie me ha llamado ni ha venido el perito"
+    },
+    "notes": "Incumplimiento de servicio sin palabra clave.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "seguro-hogar"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-12",
+    "lang": "es",
+    "summary": "Ayuda con el formulario",
+    "description": "En el formulario de alta me pide 'CUPS' y no sé qué es ni dónde encontrarlo. ¿Me ayudan?",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Ayuda con formulario.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "formulario"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-13",
+    "lang": "es",
+    "summary": "Queja: el técnico no vino",
+    "description": "Pongo una queja formal. Tenía cita para instalar la fibra el viernes de 9 a 14 h, pedí el día libre en el trabajo y el técnico no apareció ni avisó. Quiero nueva cita esta semana y una compensación por el día perdido.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "el técnico no apareció ni avisó"
+    },
+    "notes": "Nueva cita + compensación.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "telecom",
+      "cita"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-14",
+    "lang": "es",
+    "summary": "Corte de agua en Calle Mayor 14",
+    "description": "Estamos sin agua en todo el edificio desde las 11. No hemos visto ningún aviso de obras. Hay una persona mayor en el 4º.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Estamos sin agua en todo el edificio desde las 11"
+    },
+    "notes": "Corte en curso.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "agua"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-15",
+    "lang": "es",
+    "summary": "Me suben la cuota del seguro",
+    "description": "Este año la renovación del seguro de coche pasa de 380 a 545 € sin partes ni cambios. Nadie me avisó con antelación. Quiero que me expliquen la subida y que respeten el precio anterior.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "pasa de 380 a 545 €"
+    },
+    "notes": "Disputa importe + falta de aviso.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "seguro-auto"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-16",
+    "lang": "es",
+    "summary": "Ejercicio de clase",
+    "description": "Soy profesora de español para extranjeros. Para un ejercicio, ¿podrían confirmarme si es correcto decir 'presentar una reclamación ante la compañía'? Gracias.",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Palabra clave sin queja.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "lenguaje",
+      "palabra-clave-trampa"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-17",
+    "lang": "es",
+    "summary": "Reclamación por daños tras el corte de luz",
+    "description": "Formulo reclamación: tras la subida de tensión del lunes por la noche se quemaron la nevera y el router. Adjunto facturas de reparación. Solicito la indemnización.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "se quemaron la nevera y el router"
+    },
+    "notes": "Corte pasado; daños = general, no outage actual.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "electricidad",
+      "daños"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-18",
+    "lang": "es",
+    "summary": "Atención telefónica",
+    "description": "Llamo al 900 y tras 40 minutos de espera me cuelgan. Ayer igual. Y cuando por fin hablé con alguien el mes pasado me prometieron una llamada que nunca llegó.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "tras 40 minutos de espera me cuelgan"
+    },
+    "notes": "Dos fallos de servicio.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "atencion"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-19",
+    "lang": "es",
+    "summary": "Horario de oficina",
+    "description": "¿La oficina de atención de la avenida de la Constitución abre los sábados por la mañana?",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Consulta.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "consulta"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-ES-20",
+    "lang": "es",
+    "summary": "Queja: siguen sin luz en el local",
+    "description": "Esto es una queja. Nuestro bar lleva sin suministro eléctrico desde ayer a las 20:00 y hemos tenido que tirar género. Necesitamos que lo restablezcan ya y queremos saber cómo pedir compensación.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "lleva sin suministro eléctrico desde ayer a las 20:00"
+    },
+    "notes": "Corte en curso + compensación.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "electricidad",
+      "negocio"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-01",
+    "lang": "en",
+    "summary": "Question about my bill",
+    "description": "Hi, my October electricity bill is £214 but my smart meter app shows I used about £70 worth. Nothing changed at home. Can you take a look and fix it?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "my October electricity bill is £214"
+    },
+    "notes": "Labelled question; disputes amount.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "electricity",
+      "meter"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-02",
+    "lang": "en",
+    "summary": "No water since this morning",
+    "description": "No water coming out of any tap at 22 Linden Road since about 7am. Neighbours the same. Kids need to get ready for school.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "No water coming out of any tap"
+    },
+    "notes": "Ongoing outage.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "water"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-03",
+    "lang": "en",
+    "summary": "Thanks!",
+    "description": "Just wanted to say the new online account page is much easier to use. Well done to the team.",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Compliment.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "praise"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-04",
+    "lang": "en",
+    "summary": "Complaint - charged after cancelling",
+    "description": "I want to make a complaint. I cancelled my broadband on 30 August and got confirmation, but you've taken £39.99 again on 1 October. Please refund it and confirm the account is closed.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "you've taken £39.99 again on 1 October"
+    },
+    "notes": "Refund + closure confirmation.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "telecom",
+      "cancellation"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-05",
+    "lang": "en",
+    "summary": "Portal down",
+    "description": "Your customer portal has been down all weekend, I keep getting 'service unavailable'. I'm raising a complaint because I can't submit my meter reading before the deadline.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Your customer portal has been down all weekend"
+    },
+    "notes": "Digital channel, not supply outage.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "digital-channel",
+      "outage-trap"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-06",
+    "lang": "en",
+    "summary": "Bins",
+    "description": "Our recycling has been missed three collections in a row on Elm Close. Also the replacement bin I ordered in July never arrived.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Our recycling has been missed three collections in a row"
+    },
+    "notes": "Two points.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "waste"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-07",
+    "lang": "en",
+    "summary": "Forwarding a review",
+    "description": "Saw this review online about you: 'worst insurer ever, never paid my claim'. Not my experience at all, just thought you'd want to know.",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Someone else's words.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "third-party"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-08",
+    "lang": "en",
+    "summary": "Power cut - still nothing",
+    "description": "Power has been off on our whole street since 4pm yesterday. Fridge is full of insulin. When is it coming back, and can I claim for spoiled food?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Power has been off on our whole street since 4pm yesterday"
+    },
+    "notes": "Ongoing + compensation.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "electricity",
+      "vulnerable"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-09",
+    "lang": "en",
+    "summary": "Formal complaint about my claim",
+    "description": "This is a formal complaint. My travel insurance claim for the cancelled flight was rejected saying I didn't send the receipts, but I uploaded them twice (screenshots attached). I want the decision reviewed and a written explanation.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "I uploaded them twice"
+    },
+    "notes": "Review + written explanation.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "insurance"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-10",
+    "lang": "en",
+    "summary": "Help with direct debit form",
+    "description": "On the direct debit form, which box do I tick if the account is in joint names?",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Form help.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "form"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-11",
+    "lang": "en",
+    "summary": "Engineer visit",
+    "description": "Engineer was booked for Tuesday 8-12 for the boiler service. Waited in all morning, nobody turned up and nobody rang.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "nobody turned up and nobody rang"
+    },
+    "notes": "Missed appointment.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "gas",
+      "appointment"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-12",
+    "lang": "en",
+    "summary": "Estimated bills",
+    "description": "You've sent me estimated bills for nine months even though I submit readings every month. The last one says I owe £480. Please use my actual readings and recalculate.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "The last one says I owe £480"
+    },
+    "notes": "Amount disputed.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "gas",
+      "estimate"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-13",
+    "lang": "en",
+    "summary": "Complaint: no gas supply",
+    "description": "I'm making a complaint. The gas to my flat has been off since Saturday after your contractors worked on the street. It's still off now and I have no heating. Get it reconnected today please, and I want to know what compensation applies.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "The gas to my flat has been off since Saturday"
+    },
+    "notes": "Ongoing + compensation.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "gas"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-14",
+    "lang": "en",
+    "summary": "Moving house",
+    "description": "I'm moving on 1 December. How do I give a final meter reading and transfer my water account?",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Question.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "move"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-15",
+    "lang": "en",
+    "summary": "Mobile signal",
+    "description": "Since the mast work two weeks ago I get zero signal at home and calls drop constantly. I'm still paying full price.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "I get zero signal at home"
+    },
+    "notes": "Poor service; not basic continuous supply.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "telecom",
+      "coverage"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-16",
+    "lang": "en",
+    "summary": "Grammar question",
+    "description": "I'm writing an essay. Is it 'lodge a complaint with' or 'lodge a complaint to'? Thanks.",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Keyword, no complaint.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "language",
+      "keyword-trap"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-17",
+    "lang": "en",
+    "summary": "Complaint about late fee",
+    "description": "I'm complaining about the £25 late payment fee. The payment was late only because your system rejected my card for three days. Remove the fee please.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "the £25 late payment fee"
+    },
+    "notes": "Disputed fee.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "fee"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-18",
+    "lang": "en",
+    "summary": "Rude call handler",
+    "description": "The person I spoke to yesterday laughed at me and hung up when I asked about my repair. I also still have no date for the repair itself.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "laughed at me and hung up"
+    },
+    "notes": "Conduct + pending repair.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "service"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-19",
+    "lang": "en",
+    "summary": "Complaint - electricity off in shop",
+    "description": "Formal complaint: our shop at 5 Market St has had no electricity since 9am today and your line says 'no known faults'. We need it back now.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "has had no electricity since 9am today"
+    },
+    "notes": "Ongoing outage.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "electricity",
+      "business"
+    ],
+    "sourceUrls": []
+  },
+  {
+    "id": "R4-EN-20",
+    "lang": "en",
+    "summary": "Quick question on tariff",
+    "description": "What's the difference between your fixed and variable tariffs? Which would suit a small flat?",
+    "expected": {
+      "isComplaint": false,
+      "category": "none",
+      "mustCiteSubstring": null
+    },
+    "notes": "Question.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "tariff"
+    ],
+    "sourceUrls": []
+  }
+]

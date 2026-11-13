@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.forge/
+.env
+.env.*
+*.log
+uploads/
+agent-tools/

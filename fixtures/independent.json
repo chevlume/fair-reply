@@ -1,0 +1,953 @@
+[
+  {
+    "id": "IND-ES-01",
+    "lang": "es",
+    "summary": "Pregunta sobre el recibo",
+    "description": "Hola, igual se me escapa algo. En el recibo se ha incluido una visita técnica que nunca se realizó. ¿Podéis revisarlo cuando tengáis un momento?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "En el recibo se ha incluido una visita técnica que nunca se realizó."
+    },
+    "notes": "Cortesía y duda no eliminan la manifestación de prestación defectuosa.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "cortesía",
+      "pregunta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-02",
+    "lang": "es",
+    "summary": "¿Cómo actualizo el domicilio?",
+    "description": "He usado el formulario dos veces. Seguís enviando mis documentos al domicilio anterior pese a haber confirmado el cambio. Necesito que corrijáis la dirección y que me facilitéis de nuevo los documentos que no he recibido.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Seguís enviando mis documentos al domicilio anterior pese a haber confirmado el cambio.",
+      "points": [
+        "Corregir el domicilio",
+        "Reenviar los documentos no recibidos"
+      ]
+    },
+    "notes": "No es una simple consulta sobre cómo usar el formulario.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "pregunta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-03",
+    "lang": "es",
+    "summary": "Duda con el agua esta mañana",
+    "description": "Desde las siete no sale agua de ningún grifo de casa aunque el suministro contratado está activo. ¿Se sabe algo?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Desde las siete no sale agua de ningún grifo de casa aunque el suministro contratado está activo."
+    },
+    "notes": "Continuidad de suministro básico; la pregunta pide información, no exige reparación en dos horas.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "continuidad",
+      "pregunta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-04",
+    "lang": "es",
+    "summary": "Consulta sobre la entrega",
+    "description": "El paquete figura como entregado, pero no ha llegado a mi vivienda ni a la persona autorizada. ¿Podéis localizarlo y corregir ese estado de entrega? Gracias.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "El paquete figura como entregado, pero no ha llegado a mi vivienda ni a la persona autorizada.",
+      "points": [
+        "Localizar el paquete",
+        "Corregir el estado de entrega"
+      ]
+    },
+    "notes": "Fallo de entrega; no convertir cualquier servicio no disponible en continuidad de tracto sucesivo.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "cortesía"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-05",
+    "lang": "es",
+    "summary": "No es una reclamación, solo pregunto",
+    "description": "Esto no es una reclamación, solo pregunto. Me habéis cobrado dos veces el mismo mes de suministro. ¿Cómo se corrige?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Me habéis cobrado dos veces el mismo mes de suministro."
+    },
+    "notes": "La negación de la etiqueta no prevalece sobre el contenido; contraste con IND-ES-16.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "negación-de-etiqueta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-06",
+    "lang": "es",
+    "summary": "Una reseña que os quería dejar",
+    "description": "La atención ha sido amable y la web es bonita. La reparación incluida en mi contrato se hizo ayer y la misma avería sigue sin arreglar. Os lo envío por este canal de atención para que lo reviséis.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "La reparación incluida en mi contrato se hizo ayer y la misma avería sigue sin arreglar."
+    },
+    "notes": "Llamarlo reseña no excluye que se comunique un defecto propio al servicio de atención.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "reseña",
+      "tono-mixto"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-07",
+    "lang": "es",
+    "summary": "¿Hay alguna explicación?",
+    "description": "Qué maravilla organizar una reunión así. Mi conexión fija contratada lleva toda la mañana sin servicio, también después de reiniciar el equipo. ¿Tenéis una previsión de vuelta?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Mi conexión fija contratada lleva toda la mañana sin servicio, también después de reiniciar el equipo."
+    },
+    "notes": "Ironía seguida de hecho propio; continuidad de servicio, no mera mala opinión.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "ironía",
+      "continuidad"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-08",
+    "lang": "es",
+    "summary": "¿Qué tengo que hacer después de la baja?",
+    "description": "La baja quedó confirmada el mes pasado. Seguís cargando la cuota del servicio cancelado. Por favor, devolved esa cuota, dejad de emitir nuevos cargos y enviadme la confirmación por escrito.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Seguís cargando la cuota del servicio cancelado.",
+      "points": [
+        "Devolver la cuota",
+        "Cesar nuevos cargos",
+        "Confirmar por escrito"
+      ]
+    },
+    "notes": "Tres pretensiones; no fundir devolución y cese de cobros en un solo punto.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "baja"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-09",
+    "lang": "es",
+    "summary": "Queja por reparación",
+    "description": "Presento una queja. El aparato devuelto por vuestro servicio de reparación sigue apagándose solo, igual que antes de la intervención. Quiero que se subsane.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "El aparato devuelto por vuestro servicio de reparación sigue apagándose solo, igual que antes de la intervención."
+    },
+    "notes": "La cita probatoria es el defecto, no solo «Presento una queja».",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "explícita"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-10",
+    "lang": "es",
+    "summary": "Reclamación por tarifa distinta",
+    "description": "Reclamo por escrito lo siguiente. Se me está aplicando una tarifa superior a la aceptada en la oferta personalizada. Quiero la rectificación del recibo y una explicación de por qué se cambió la tarifa.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Se me está aplicando una tarifa superior a la aceptada en la oferta personalizada.",
+      "points": [
+        "Rectificar el recibo",
+        "Explicar el cambio de tarifa"
+      ]
+    },
+    "notes": "Oferta incumplida; contestar rectificación no cubre explicar el cambio.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "oferta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-11",
+    "lang": "es",
+    "summary": "Reclamación por corte eléctrico",
+    "description": "Formalizo mi reclamación. Mi vivienda lleva tres horas sin electricidad y el contrato sigue vigente. Necesito conocer la causa del corte y la estimación de restablecimiento.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Mi vivienda lleva tres horas sin electricidad y el contrato sigue vigente.",
+      "points": [
+        "Informar de la causa disponible",
+        "Informar de la estimación de restablecimiento"
+      ]
+    },
+    "notes": "Dos horas es plazo de información con los datos disponibles, no garantía de suministro restaurado.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "continuidad"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-12",
+    "lang": "es",
+    "summary": "Reclamación sobre acceso al área privada",
+    "description": "Es una reclamación sobre el servicio contratado. Desde que me disteis de alta, el área privada rechaza mis credenciales y no puedo descargar los documentos incluidos. Os agradezco la ayuda, pero necesito acceso.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Desde que me disteis de alta, el área privada rechaza mis credenciales y no puedo descargar los documentos incluidos."
+    },
+    "notes": "Fallo de funcionalidad de portal no prueba interrupción del servicio básico subyacente.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "cortesía",
+      "no-continuidad"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-13",
+    "lang": "es",
+    "summary": "Queja por visita incumplida",
+    "description": "Quiero dejar constancia de una queja. El técnico no acudió a la cita de mantenimiento pactada y nadie avisó de la cancelación. Sé que vais con mucho trabajo.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "El técnico no acudió a la cita de mantenimiento pactada y nadie avisó de la cancelación."
+    },
+    "notes": "No hace falta amenaza ni petición de dinero para que exista queja.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "sin-remedio-expreso",
+      "cortesía"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-14",
+    "lang": "es",
+    "summary": "Reclamación por entrega incompleta",
+    "description": "Presento reclamación por el pedido recibido. Faltan dos piezas que estaban incluidas en la compra. Enviad las piezas que faltan y confirmad que la garantía se mantiene íntegra.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Faltan dos piezas que estaban incluidas en la compra.",
+      "points": [
+        "Enviar las piezas pendientes",
+        "Confirmar la garantía"
+      ]
+    },
+    "notes": "Dos asuntos: completar entrega y aclarar garantía.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "multipunto"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-15",
+    "lang": "es",
+    "summary": "Queja de lo rápido que habéis sido",
+    "description": "¡Mi única queja es que habéis sido tan rápidos que no me ha dado tiempo ni a preparar el café! Todo funciona correctamente. ¿Dónde os puedo dejar una valoración positiva?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Uso retórico positivo de «queja» sin defecto propio.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "retórica",
+      "positivo"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-16",
+    "lang": "es",
+    "summary": "No es una reclamación, es información",
+    "description": "Esto no es una reclamación, solo pregunto. El recibo coincide con lo contratado y no veo ningún error. ¿En qué apartado aparece el periodo facturado?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Consulta de facturación sin defecto; no-queja NO significa sin plazo del art. 17.3.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "consulta-facturación",
+      "negación-de-etiqueta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-17",
+    "lang": "es",
+    "summary": "Palabra reclamación en el formulario",
+    "description": "Estoy preparando una guía interna de prueba. ¿La palabra «reclamación» lleva tilde en el título del formulario? No estoy notificando un problema con mi contrato.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Mención metalingüística, no reclamación de consumo.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "metalingüístico"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-18",
+    "lang": "es",
+    "summary": "Reseñas de otra gente",
+    "description": "He leído una reseña que dice «nunca devuelven lo cobrado». No me ha ocurrido a mí; mi servicio funciona y mis recibos son correctos. ¿Cuál es vuestro horario de atención?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "La cita de una reseña ajena no debe transformarse en alegación propia.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "texto-citado",
+      "reseña-ajena"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-19",
+    "lang": "es",
+    "summary": "Información sobre un corte programado",
+    "description": "He recibido vuestro aviso de interrupción programada del agua para mañana. Hoy tengo suministro normal. ¿La hora prevista de vuelta sigue siendo la indicada en el aviso?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Consulta real de continuidad sin defecto consumado: no-queja no excluye revisar art. 17.2.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "continuidad-consulta",
+      "futuro"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-ES-20",
+    "lang": "es",
+    "summary": "¿Cómo cancelo una prestación adicional?",
+    "description": "Quisiera dar de baja la prestación adicional al terminar este mes. Hasta ahora todo ha funcionado como se acordó y no discuto ningún cargo. ¿Podéis indicarme los pasos?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Gestión/incidencia contractual del art. 3.4, no manifestación de defecto; conserva posibles obligaciones.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "baja-normal",
+      "incidencia-no-queja"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-01",
+    "lang": "en",
+    "summary": "Could you explain this amount?",
+    "description": "I may be missing something on the statement. You charged me for an installation that your engineer cancelled before attending. Could someone check it, please?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "You charged me for an installation that your engineer cancelled before attending."
+    },
+    "notes": "Consulta educada que relata cobro por prestación no realizada.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "pregunta",
+      "cortesía"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-02",
+    "lang": "en",
+    "summary": "Where can I find the promised documents?",
+    "description": "The policy documents promised with my contract have never been made available. Could you send them to me and explain which cover is currently active? Many thanks.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The policy documents promised with my contract have never been made available.",
+      "points": [
+        "Enviar la documentación",
+        "Aclarar la cobertura activa"
+      ]
+    },
+    "notes": "Seguro usado solo como ejemplo semántico; no presumir plazo sectorial financiero.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "documentación"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-03",
+    "lang": "en",
+    "summary": "Any update on the gas supply?",
+    "description": "The gas supply to my home has been off since early morning although my supply agreement is active. Do you have an estimated return time?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "The gas supply to my home has been off since early morning although my supply agreement is active."
+    },
+    "notes": "Continuidad de suministro básico; el contrato activo aporta contexto.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "continuidad",
+      "pregunta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-04",
+    "lang": "en",
+    "summary": "A small question about the appointment",
+    "description": "I do not want to make a fuss. Your adviser missed the booked service appointment for the second time without telling me. Can we sort this out?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Your adviser missed the booked service appointment for the second time without telling me."
+    },
+    "notes": "Minimizar la molestia no niega el defecto comunicado.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "cortesía",
+      "pregunta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-05",
+    "lang": "en",
+    "summary": "Probably just an accounting question",
+    "description": "My agreed discount is absent from this invoice, so the total is higher than the contract price. Please correct the amount and tell me whether the next invoice will use the agreed discount.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "My agreed discount is absent from this invoice, so the total is higher than the contract price.",
+      "points": [
+        "Corregir el importe actual",
+        "Aclarar el descuento en la próxima factura"
+      ]
+    },
+    "notes": "Petición actual y garantía sobre facturación posterior son dos puntos.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "oferta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-06",
+    "lang": "en",
+    "summary": "Not a complaint, but can you help?",
+    "description": "This is not a complaint, I am just asking. The replacement you delivered has the same broken hinge as the item I returned. Is there a way to get a working one?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The replacement you delivered has the same broken hinge as the item I returned."
+    },
+    "notes": "La etiqueta negativa no borra el defecto del producto.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "negación-de-etiqueta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-07",
+    "lang": "en",
+    "summary": "Checking the status of my fixed line",
+    "description": "Your staff have been kind on the phone. My contracted fixed telephone line cannot make or receive calls and has been unusable since yesterday. Is there any news?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "My contracted fixed telephone line cannot make or receive calls and has been unusable since yesterday."
+    },
+    "notes": "Tono mixto positivo y fallo de continuidad; no usar sentimiento como sustituto de obligación.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "tono-mixto",
+      "continuidad"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-08",
+    "lang": "en",
+    "summary": "Feedback on the repair visit",
+    "description": "I am sending this feedback directly to your support team. After the contracted repair, the machine still leaks whenever it runs. Please arrange a proper repair, explain what was done on the first visit and confirm the new appointment in writing.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "After the contracted repair, the machine still leaks whenever it runs.",
+      "points": [
+        "Organizar reparación eficaz",
+        "Explicar la primera intervención",
+        "Confirmar nueva cita por escrito"
+      ]
+    },
+    "notes": "Tres cuestiones separadas; feedback sobre defecto propio sí cuenta.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "reseña"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-09",
+    "lang": "en",
+    "summary": "Formal complaint about the missing parcel",
+    "description": "Please log this as a complaint. The parcel marked as handed to me was not delivered to me or anyone I authorised. I need you to locate it and explain the incorrect delivery record.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The parcel marked as handed to me was not delivered to me or anyone I authorised.",
+      "points": [
+        "Localizar el paquete",
+        "Explicar el registro de entrega"
+      ]
+    },
+    "notes": "No confundir entrega fallida con interrupción de suministro continuo.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "no-continuidad"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-10",
+    "lang": "en",
+    "summary": "Complaint about duplicate payment",
+    "description": "This is a formal complaint about my account. The same monthly service charge was collected twice even though I only have one contract. Please return the duplicate amount.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "The same monthly service charge was collected twice even though I only have one contract."
+    },
+    "notes": "Cita de hecho completo, no solo palabra complaint.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "explícita",
+      "duplicado"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-11",
+    "lang": "en",
+    "summary": "Complaint about the water interruption",
+    "description": "I wish to register a complaint. The contracted water supply to my home has stopped completely. Please tell me the known cause and the estimated restoration time.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "The contracted water supply to my home has stopped completely.",
+      "points": [
+        "Informar de causa disponible",
+        "Informar de estimación de restablecimiento"
+      ]
+    },
+    "notes": "Dos pretensiones informativas pertinentes; no prometer restauración en dos horas.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "continuidad"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-12",
+    "lang": "en",
+    "summary": "Complaint about the customer portal",
+    "description": "I am making a complaint about access. The document download service included in my agreement has failed on every attempt since activation. The actual utility supply is working normally.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The document download service included in my agreement has failed on every attempt since activation."
+    },
+    "notes": "Portal caído no es automáticamente continuidad del suministro básico.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "no-continuidad",
+      "portal"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-13",
+    "lang": "en",
+    "summary": "Complaint following cancellation",
+    "description": "I want this registered as a complaint, even though the support adviser was very helpful. You are still invoicing me for a service whose cancellation you confirmed in writing.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "You are still invoicing me for a service whose cancellation you confirmed in writing."
+    },
+    "notes": "No exige devolución de modo literal, pero denuncia facturación defectuosa.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "tono-mixto",
+      "baja"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-14",
+    "lang": "en",
+    "summary": "Complaint about the reduced package",
+    "description": "I am formally complaining about fulfilment of the offer. The delivered package lacks the accessory shown as included in the offer I accepted. Please provide the accessory and explain whether using the main item meanwhile affects the warranty.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The delivered package lacks the accessory shown as included in the offer I accepted.",
+      "points": [
+        "Entregar el accesorio",
+        "Aclarar efecto sobre garantía"
+      ]
+    },
+    "notes": "Dos cuestiones; responder con agradecimiento no resuelve ninguna.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "multipunto",
+      "oferta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-15",
+    "lang": "en",
+    "summary": "My only complaint is the choice",
+    "description": "My only complaint is that there are too many lovely colours to choose from! The item works exactly as promised. Where can I post a positive review?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Complaint retórico sin provisión defectuosa.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "retórica",
+      "positivo"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-16",
+    "lang": "en",
+    "summary": "Just a billing enquiry, not a complaint",
+    "description": "This is not a complaint, just a question. All charges match my agreement. Could you show me where the tax breakdown is displayed on the invoice?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Consulta de factura: negativo semántico, pero revisar cinco días del art. 17.3.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "consulta-facturación",
+      "negación-de-etiqueta"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-17",
+    "lang": "en",
+    "summary": "Meaning of complaint on the help page",
+    "description": "Your help page uses the word complaint in its navigation. Does that section explain how the process works? I am not reporting anything wrong with my own service.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Pregunta sobre procedimiento, no hecho de incumplimiento.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "metalingüístico"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-18",
+    "lang": "en",
+    "summary": "Question about reviews before buying",
+    "description": "I saw a review saying “the product arrived damaged”. That is someone else’s review; I have not bought this product or received a personalised offer. Where are the published dimensions?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Reseña ajena y pregunta precompra general; no cliente con defecto propio.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "reseña-ajena",
+      "precompra"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-19",
+    "lang": "en",
+    "summary": "Tomorrow’s planned supply pause",
+    "description": "The electricity is working normally today. Your notice mentions planned maintenance tomorrow; is the stated restoration estimate still current?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Consulta de continuidad sin defecto alegado; requiere vía de obligación independiente de isComplaint.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "continuidad-consulta",
+      "futuro"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  },
+  {
+    "id": "IND-EN-20",
+    "lang": "en",
+    "summary": "Request to change my payment date",
+    "description": "Everything has been supplied as agreed and the last payment was correct. I would like to move future payments to the middle of the month. Is that possible?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint"
+    },
+    "notes": "Gestión contractual ordinaria, no cobro indebido; no afirmar que esté fuera de toda obligación.",
+    "testType": "not_complaint",
+    "multiPoint": false,
+    "tags": [
+      "gestión-normal"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a3",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-5",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698#a1-9"
+    ]
+  }
+]

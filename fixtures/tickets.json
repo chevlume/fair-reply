@@ -1,0 +1,302 @@
+[
+  {
+    "id": "es-h1",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Duda sobre mi factura",
+    "description": "Quería comentar un cargo del recibo. Es la tercera vez que os lo digo y exijo que me devolváis los 48 €. También necesito la factura corregida.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Es la tercera vez que os lo digo y exijo que me devolváis los 48 €."
+  },
+  {
+    "id": "es-h2",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Consulta de suministro",
+    "description": "Llevamos desde las ocho sin agua en el edificio y nadie coge el teléfono.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Llevamos desde las ocho sin agua en el edificio y nadie coge el teléfono."
+  },
+  {
+    "id": "es-h3",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Información de contrato",
+    "description": "Llevo tres semanas sin que nadie resuelva el cambio de titular y estoy harto de llamar.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Llevo tres semanas sin que nadie resuelva el cambio de titular y estoy harto de llamar."
+  },
+  {
+    "id": "es-h4",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Pregunta sobre un cargo",
+    "description": "Me habéis cobrado dos veces el mismo recibo de marzo y sigo sin el abono.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Me habéis cobrado dos veces el mismo recibo de marzo y sigo sin el abono."
+  },
+  {
+    "id": "es-h5",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Seguimiento",
+    "description": "Os escribí el lunes y sigo sin una cita para la revisión que prometisteis.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Os escribí el lunes y sigo sin una cita para la revisión que prometisteis."
+  },
+  {
+    "id": "es-h6",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Aviso",
+    "description": "Hay un corte de luz en el portal desde mediodía y seguimos sin suministro.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Hay un corte de luz en el portal desde mediodía y seguimos sin suministro."
+  },
+  {
+    "id": "es-e1",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Reclamación formal por la factura",
+    "description": "Presento una reclamación formal: la factura de octubre no cuadra y quiero que me devolváis 30 €.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Presento una reclamación formal: la factura de octubre no cuadra y quiero que me devolváis 30 €."
+  },
+  {
+    "id": "es-e2",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Queja por el trato",
+    "description": "Esto es inaceptable: el técnico no se presentó y no me avisasteis.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Esto es inaceptable: el técnico no se presentó y no me avisasteis."
+  },
+  {
+    "id": "es-e3",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Reclamación de avería",
+    "description": "Presento una queja porque llevamos dos días sin agua.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Presento una queja porque llevamos dos días sin agua."
+  },
+  {
+    "id": "es-e4",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Queja por demora",
+    "description": "Es indignante que nadie responda a mi solicitud de baja desde hace un mes.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Es indignante que nadie responda a mi solicitud de baja desde hace un mes."
+  },
+  {
+    "id": "es-n1",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Cambio de titular",
+    "description": "¿Cómo cambio el titular del contrato?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "es-n2",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Gracias",
+    "description": "Gracias, la incidencia de ayer ya está resuelta.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "es-n3",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Horario",
+    "description": "¿Cuál es el horario de la oficina?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "es-n4",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Información sobre devoluciones",
+    "description": "¿Cómo solicito una devolución si me arrepiento en 14 días?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "es-n5",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Fecha del recibo",
+    "description": "Quería saber si el recibo de este mes saldrá el día 5.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "en-h1",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Question about my bill",
+    "description": "You charged me twice for March and I still have not received the credit.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "You charged me twice for March and I still have not received the credit."
+  },
+  {
+    "id": "en-h2",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Supply question",
+    "description": "We have been without water since eight this morning and nobody is answering.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "We have been without water since eight this morning and nobody is answering."
+  },
+  {
+    "id": "en-h3",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Account update",
+    "description": "I have been waiting three weeks for the name change and I am tired of calling.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "I have been waiting three weeks for the name change and I am tired of calling."
+  },
+  {
+    "id": "en-h4",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Appointment",
+    "description": "You still have not booked the inspection you promised last Monday.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "You still have not booked the inspection you promised last Monday."
+  },
+  {
+    "id": "en-h5",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Service notice",
+    "description": "The power has been out in the building since noon and we are still without electricity.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "The power has been out in the building since noon and we are still without electricity."
+  },
+  {
+    "id": "en-h6",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Payment question",
+    "description": "The October invoice does not match my meter reading and I keep being billed the wrong amount.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "The October invoice does not match my meter reading and I keep being billed the wrong amount."
+  },
+  {
+    "id": "en-e1",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Formal complaint about the invoice",
+    "description": "This is a formal complaint: I want a refund of 30 EUR for the duplicate charge.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "This is a formal complaint: I want a refund of 30 EUR for the duplicate charge."
+  },
+  {
+    "id": "en-e2",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Unacceptable visit",
+    "description": "This is unacceptable. The technician did not show up and nobody warned me.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "This is unacceptable."
+  },
+  {
+    "id": "en-e3",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Complaint about the outage",
+    "description": "I am filing a complaint because we have had no water for two days.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "I am filing a complaint because we have had no water for two days."
+  },
+  {
+    "id": "en-e4",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Complaint about cancellation",
+    "description": "I demand a written answer. My cancellation request has been ignored for a month.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "I demand a written answer."
+  },
+  {
+    "id": "en-n1",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Account holder",
+    "description": "How do I change the account holder?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "en-n2",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Thanks",
+    "description": "Thanks, yesterday's fault is already fixed.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "en-n3",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Opening hours",
+    "description": "What are the office opening hours?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "en-n4",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Refund information",
+    "description": "How do I request a refund if I change my mind within 14 days?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "en-n5",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Payment date",
+    "description": "Can you confirm whether this month's payment will leave on the 5th?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  }
+]

@@ -1,0 +1,873 @@
+[
+  {
+    "id": "R3-ES-01",
+    "lang": "es",
+    "summary": "Consulta sobre dos líneas del recibo",
+    "description": "He seleccionado «pregunta» porque no sé qué formulario corresponde. En el recibo del agua me cobráis dos veces la misma cuota de saneamiento del mismo mes. Además, el total impreso no coincide con la suma de las líneas. ¿Podéis aclarar ambas cosas?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "En el recibo del agua me cobráis dos veces la misma cuota de saneamiento del mismo mes."
+    },
+    "notes": "Dos defectos actuales de facturación; no es una mera petición de explicación de conceptos.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "duplicate-charge",
+      "arithmetic",
+      "question-label"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-02",
+    "lang": "es",
+    "summary": "¿Cómo consulto el estado del envío asegurado?",
+    "description": "El transporte que contraté incluía entrega con comprobación de identidad. Habéis dejado mi paquete en el cuarto de contadores sin entregármelo ni comprobar quién lo recogía. El servicio contratado también incluía el aviso por SMS y no lo recibí. ¿Qué paso sigue ahora?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Habéis dejado mi paquete en el cuarto de contadores sin entregármelo ni comprobar quién lo recogía."
+    },
+    "notes": "Dos incumplimientos de prestaciones pactadas en un envío propio.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "parcel",
+      "delivery",
+      "notification"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-03",
+    "lang": "es",
+    "summary": "Pregunta sobre el suministro de gas",
+    "description": "Soy titular de un contrato de gas que sigue activo. Desde esta mañana no llega gas a mi vivienda, aunque la llave está abierta. ¿Me podéis indicar la causa y cuándo volverá el suministro?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Desde esta mañana no llega gas a mi vivienda, aunque la llave está abierta."
+    },
+    "notes": "Interrupción actual de un suministro básico contratado; respuesta de continuidad, no garantía de reparación.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "gas",
+      "continuity",
+      "calm-language"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-04",
+    "lang": "es",
+    "summary": "Ayuda para elegir un canal de atención",
+    "description": "Al contratar mi línea móvil aceptasteis enviarme las comunicaciones de servicio en letra grande. Las comunicaciones que me estáis enviando siguen teniendo un tamaño que no puedo leer. ¿A qué departamento lo dirijo?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Las comunicaciones que me estáis enviando siguen teniendo un tamaño que no puedo leer."
+    },
+    "notes": "Prestación accesible pactada e incumplida; no es solicitud inicial de adaptación.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "telecom",
+      "accessibility",
+      "contract-performance"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-05",
+    "lang": "es",
+    "summary": "¿Qué tarifa se ha usado en este recibo?",
+    "description": "Tengo contratada la tarifa de agua sin cuota por contador durante los primeros seis meses. En el segundo mes ya habéis incluido una cuota por contador de 8 euros en mi factura. ¿Es este el sitio para preguntar por ese importe?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "En el segundo mes ya habéis incluido una cuota por contador de 8 euros en mi factura."
+    },
+    "notes": "Diferencia entre oferta contratada y cargo aplicado.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "water",
+      "offer-mismatch",
+      "question-label"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-06",
+    "lang": "es",
+    "summary": "Información sobre el agua y el aviso",
+    "description": "Mi suministro doméstico de agua está contratado y al corriente de pago. Llevamos desde el mediodía sin agua en ninguno de los grifos de casa. También habíais pactado avisarme por teléfono de los cortes programados y no me habéis avisado. ¿Podéis informar de las dos cosas?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Llevamos desde el mediodía sin agua en ninguno de los grifos de casa."
+    },
+    "notes": "Continuidad más incumplimiento de aviso; el segundo punto no debe ocultar el reloj de continuidad.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "water",
+      "continuity",
+      "missed-notice"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-07",
+    "lang": "es",
+    "summary": "¿Dónde se puede consultar el justificante?",
+    "description": "Mi póliza de hogar incluye la entrega de una copia descargable de cada parte registrado. Registrasteis mi parte hace una semana, pero el documento que me habéis entregado está vacío y no contiene ningún dato del parte. ¿Podéis orientarme para obtener la copia que corresponde?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Registrasteis mi parte hace una semana, pero el documento que me habéis entregado está vacío y no contiene ningún dato del parte."
+    },
+    "notes": "Defecto de prestación documental pactada, no una consulta inicial sobre cobertura; revisar normativa sectorial de seguros.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "insurance",
+      "document-defect",
+      "sectoral-caveat"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-08",
+    "lang": "es",
+    "summary": "Duda sobre el área de cliente de electricidad",
+    "description": "En mi contrato de luz se incluye poder descargar las lecturas y cambiar la cuenta de domiciliación desde el área de cliente. El área de cliente me devuelve un fichero sin lecturas y rechaza el cambio de cuenta que el contrato permite. El suministro eléctrico en casa funciona con normalidad. ¿Hay otra forma de hacerlo?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "El área de cliente me devuelve un fichero sin lecturas y rechaza el cambio de cuenta que el contrato permite."
+    },
+    "notes": "Dos fallos del portal contratado sin corte de suministro ni cargo incorrecto; no activar dos horas.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "portal-not-outage",
+      "energy",
+      "two-service-defects"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-09",
+    "lang": "es",
+    "summary": "Reclamación sobre el recibo de electricidad",
+    "description": "Presento una reclamación. Habéis facturado un consumo final de 940 kWh cuando las lecturas inicial y final que figuran en ese mismo recibo solo difieren en 94 kWh. Solicito que reviséis ese cálculo.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Habéis facturado un consumo final de 940 kWh cuando las lecturas inicial y final que figuran en ese mismo recibo solo difieren en 94 kWh."
+    },
+    "notes": "Incoherencia numérica de una factura, no simple duda sobre consumo.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "electricity",
+      "inconsistent-amount",
+      "explicit"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-10",
+    "lang": "es",
+    "summary": "Queja por corte de luz y gestión del aviso",
+    "description": "Reclamo por lo que está pasando en mi punto de suministro activo. Me habéis dejado sin electricidad después de cerrar por error mi contrato, que yo no había pedido dar de baja. Además, la referencia del aviso que me facilitasteis corresponde a otra gestión y no permite consultar este corte. Necesito respuesta sobre ambos puntos.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Me habéis dejado sin electricidad después de cerrar por error mi contrato, que yo no había pedido dar de baja."
+    },
+    "notes": "Corte actual de suministro más defecto de trazabilidad; prevalece continuidad.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "electricity",
+      "wrong-disconnection",
+      "tracking-defect"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-11",
+    "lang": "es",
+    "summary": "Queja por incumplimiento de recogida",
+    "description": "Quiero dejar constancia de mi queja. Contraté la recogida de una devolución en una franja de tarde y el transportista vino por la mañana, cerrando después la recogida como rechazada por mí. Yo estaba disponible en toda la franja contratada.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Contraté la recogida de una devolución en una franja de tarde y el transportista vino por la mañana, cerrando después la recogida como rechazada por mí."
+    },
+    "notes": "Incumplimiento de horario contratado y registro incorrecto, sin facturación.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "parcel",
+      "agreed-window",
+      "false-status"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-12",
+    "lang": "es",
+    "summary": "Reclamación por datos nacionales cobrados como itinerancia",
+    "description": "Reclamo el importe de mi última factura móvil. Me habéis cobrado como itinerancia unos datos usados en España que mi tarifa incluye sin coste adicional. No he salido del país durante ese periodo.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Me habéis cobrado como itinerancia unos datos usados en España que mi tarifa incluye sin coste adicional."
+    },
+    "notes": "Precio aplicado contrario a tarifa contratada.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "telecom",
+      "tariff-mismatch",
+      "billing"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-13",
+    "lang": "es",
+    "summary": "Reclamación sobre la asistencia incluida en mi seguro",
+    "description": "Formulo una reclamación por la asistencia de mi póliza. La asistencia contratada incluía guardar mis muebles durante la reparación, pero los habéis dejado expuestos a la intemperie. También os comprometisteis a entregarme un inventario y no me lo habéis entregado. Pido respuesta a los dos incumplimientos.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "La asistencia contratada incluía guardar mis muebles durante la reparación, pero los habéis dejado expuestos a la intemperie."
+    },
+    "notes": "Dos prestaciones de asistencia pactadas e incumplidas; no cuantifica un cobro; revisar régimen sectorial.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "insurance",
+      "assistance",
+      "sectoral-caveat"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-14",
+    "lang": "es",
+    "summary": "Reclamación por suspensión del gas",
+    "description": "Presento una reclamación por la suspensión del suministro. Mi contrato de gas sigue vigente y pagado, pero habéis suspendido el suministro en mi domicilio al confundirlo con otro punto de suministro. Seguimos sin gas y necesito conocer la previsión de restablecimiento.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Mi contrato de gas sigue vigente y pagado, pero habéis suspendido el suministro en mi domicilio al confundirlo con otro punto de suministro."
+    },
+    "notes": "Continuidad de suministro contratado, no mera duda comercial.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "gas",
+      "wrong-supply-point",
+      "continuity"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-15",
+    "lang": "es",
+    "summary": "Un mensaje de agradecimiento",
+    "description": "No tengo ninguna queja: me habéis explicado el cambio de tarifa con paciencia y todo ha quedado como acordamos. Solo quiero dar las gracias al equipo.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Elogio con la palabra «queja», sin manifestación de prestación defectuosa.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "praise",
+      "complaint-word"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-16",
+    "lang": "es",
+    "summary": "Significado de una palabra del formulario",
+    "description": "En vuestro formulario aparecen «consulta» y «reclamación». ¿Qué significa aquí la palabra «reclamación»? No estoy describiendo ningún problema con mi contrato.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Pregunta metalingüística; la palabra no prueba una reclamación.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "metalinguistic",
+      "complaint-word"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-17",
+    "lang": "es",
+    "summary": "¿Se pueden citar reseñas en un trabajo de clase?",
+    "description": "Estoy preparando un ejercicio de clase. En una reseña pública de otra persona he leído: «Me habéis cobrado el seguro dos veces y sigo esperando una explicación». ¿Tenéis una página pública que explique cómo se moderan las reseñas? Yo no tengo póliza con vosotros ni actúo por esa persona.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Relato citado de tercero sin atribuir el perjuicio al remitente ni representación.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "third-party-quotation",
+      "no-customer-claim"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-18",
+    "lang": "es",
+    "summary": "Simulación del formulario",
+    "description": "Si esto fuera una queja por un corte de agua, ¿qué campo se usaría para indicar la duración? Estoy probando el formulario de formación, no ha habido ningún corte real.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Hipótesis expresamente contrafactual sin prestación defectuosa real.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "hypothetical",
+      "training"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-19",
+    "lang": "es",
+    "summary": "Consulta sobre una noticia de consumo",
+    "description": "He leído una noticia sobre una persona a la que su comercializadora siguió facturando tras la baja. No soy esa persona ni gestiono su caso. ¿Publicáis estadísticas anónimas de asuntos así?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Caso ajeno usado como contexto de una solicitud informativa, sin reclamación por cuenta ajena.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "someone-elses-case",
+      "statistics"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-ES-20",
+    "lang": "es",
+    "summary": "Solicitud de otra fecha de emisión",
+    "description": "Querría que a partir del próximo mes el recibo del agua se emita el día 20 en lugar del 10, si es una opción disponible. Los recibos actuales son correctos y no he solicitado este cambio antes.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Gestión futura del contrato sin defecto alegado; ser incidencia no equivale necesariamente a queja.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "prospective-request",
+      "billing-vocabulary",
+      "incidencia-not-complaint"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-01",
+    "lang": "en",
+    "summary": "Question about the credit on my water statement",
+    "description": "I am using the information-request option. You agreed a 12 euro credit for the last billing period, but the issued water bill adds 12 euros instead of subtracting it. Could you explain how that was applied?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "You agreed a 12 euro credit for the last billing period, but the issued water bill adds 12 euros instead of subtracting it."
+    },
+    "notes": "Wrong sign on an agreed credit already billed, not a future discount enquiry.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "water",
+      "credit-error",
+      "question-label"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-02",
+    "lang": "en",
+    "summary": "Could someone help with my delivery options?",
+    "description": "I paid for a signed-for parcel service with reusable packaging collected afterwards. Your courier handed my parcel to an unidentified passer-by rather than obtaining my signature. The packaging collection included in my booking was also marked complete without anyone collecting it. Which team can help with these two items?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Your courier handed my parcel to an unidentified passer-by rather than obtaining my signature."
+    },
+    "notes": "Two unfulfilled parcel-service commitments; no disputed charge.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "parcel",
+      "signature",
+      "unfulfilled-collection"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-03",
+    "lang": "en",
+    "summary": "Request for information about the gas connection",
+    "description": "My domestic gas contract is active. There has been no gas at my contracted supply point since the meter was exchanged this morning. Your agreed status-update service also keeps reporting that the supply is running normally. Can I have information about the loss of supply and the inaccurate updates?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "There has been no gas at my contracted supply point since the meter was exchanged this morning."
+    },
+    "notes": "Current gas continuity failure plus inaccurate status information; continuity must not be hidden by the second point.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "gas",
+      "continuity",
+      "inaccurate-status"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-04",
+    "lang": "en",
+    "summary": "Where do I ask about the agreed language option?",
+    "description": "My home insurance contract includes an English copy of policy changes. The change notice you sent me is only in Spanish despite that agreed option. Could you point me to whoever can supply the contracted version?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The change notice you sent me is only in Spanish despite that agreed option."
+    },
+    "notes": "Actual failure of a contracted communication feature; not a new language preference request; sectoral caveat.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "insurance",
+      "contracted-language",
+      "sectoral-caveat"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-05",
+    "lang": "en",
+    "summary": "Help understanding the gas payment breakdown",
+    "description": "My gas account is on the fixed monthly payment plan you confirmed. You have taken a variable quarterly amount instead of the fixed monthly amount agreed in my contract. The same statement also assigns my last payment to a period I have never been billed for. Can you explain both entries?",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "You have taken a variable quarterly amount instead of the fixed monthly amount agreed in my contract."
+    },
+    "notes": "Two current payment/accounting discrepancies, not merely unfamiliar billing terminology.",
+    "testType": "hidden",
+    "multiPoint": true,
+    "tags": [
+      "gas",
+      "payment-plan-mismatch",
+      "misallocated-payment"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-06",
+    "lang": "en",
+    "summary": "Can I get an update on the household water supply?",
+    "description": "I have an active household water contract with you. No water is reaching my home after your valve works in the street, and the taps are still dry. Could you tell me what is known about the cause and the expected return of service?",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "No water is reaching my home after your valve works in the street, and the taps are still dry."
+    },
+    "notes": "Actual basic-service interruption even though phrased as an update request.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "water",
+      "continuity",
+      "update-request"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-07",
+    "lang": "en",
+    "summary": "A question about the mobile plan feature",
+    "description": "The mobile plan I signed up for includes voicemail messages delivered by email. Your service has discarded the voicemail messages instead of sending them to the email address on my contract. Calls and mobile data still work. Where should I ask about this?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Your service has discarded the voicemail messages instead of sending them to the email address on my contract."
+    },
+    "notes": "Defective ancillary telecom feature, not a continuity outage of the underlying connection.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "telecom",
+      "ancillary-feature",
+      "not-continuity"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-08",
+    "lang": "en",
+    "summary": "How do I obtain an accessible electricity statement?",
+    "description": "The accessible PDF version is part of my electricity account agreement. The PDF statements you provide are image-only scans that my screen reader cannot read, unlike the accessible documents we agreed. The electricity supply itself is fine. Could you advise on the next step?",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The PDF statements you provide are image-only scans that my screen reader cannot read, unlike the accessible documents we agreed."
+    },
+    "notes": "Document accessibility defect, not a disputed bill amount or electricity outage.",
+    "testType": "hidden",
+    "multiPoint": false,
+    "tags": [
+      "energy",
+      "accessibility",
+      "document-not-billing"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-09",
+    "lang": "en",
+    "summary": "Complaint about a water account after a meter change",
+    "description": "Please record this as a complaint. You have billed my household water use using the serial number of a meter that is not installed at my address. You have also applied a late-payment fee even though the payment date on the statement is before the due date. I need both points addressed.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "You have billed my household water use using the serial number of a meter that is not installed at my address."
+    },
+    "notes": "Two distinct alleged billing defects; clock remains billing.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "water",
+      "wrong-meter-bill",
+      "unjustified-fee"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-10",
+    "lang": "en",
+    "summary": "Formal complaint about the electricity supply",
+    "description": "I am making a complaint about my active electricity contract. You disconnected my electricity when processing my request to change the correspondence address, although I did not request a supply disconnection. The property is still without power.",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "You disconnected my electricity when processing my request to change the correspondence address, although I did not request a supply disconnection."
+    },
+    "notes": "Active electricity continuity loss; two-hour response is not a restoration promise.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "electricity",
+      "administrative-disconnection",
+      "continuity"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-11",
+    "lang": "en",
+    "summary": "Complaint about the parcel handover record",
+    "description": "I wish to complain about the parcel service I booked. You returned my parcel to the sender even though I accepted the redelivery slot you offered. Your tracking record also says I refused delivery, which I did not. Please address both the return and the incorrect record.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "You returned my parcel to the sender even though I accepted the redelivery slot you offered."
+    },
+    "notes": "Two delivery-performance allegations, no financial claim needed.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "parcel",
+      "failed-redelivery",
+      "false-status"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-12",
+    "lang": "en",
+    "summary": "Complaint about the broadband equipment charge",
+    "description": "This is a complaint about my issued broadband bill. You charged me a router purchase price even though my signed offer provides the router on loan at no purchase charge. I am asking you to correct that invoice.",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "You charged me a router purchase price even though my signed offer provides the router on loan at no purchase charge."
+    },
+    "notes": "Billed charge contradicts the accepted personalised offer.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "telecom",
+      "equipment-charge",
+      "offer-mismatch"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-13",
+    "lang": "en",
+    "summary": "Complaint about the insurance assistance recording",
+    "description": "I am raising a complaint under my home assistance contract. You recorded my request for temporary accommodation as withdrawn even though I confirmed that I still needed the included accommodation service. Please correct the handling of my request.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "You recorded my request for temporary accommodation as withdrawn even though I confirmed that I still needed the included accommodation service."
+    },
+    "notes": "Actual defective assistance handling, not a generic question about coverage; sector-specific rules may apply.",
+    "testType": "explicit",
+    "multiPoint": false,
+    "tags": [
+      "insurance",
+      "assistance-handling",
+      "sectoral-caveat"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-14",
+    "lang": "en",
+    "summary": "Complaint about the electricity customer portal",
+    "description": "I want to complain about two features included in my electricity contract. Your portal will not save my agreed communication preferences and it exports another account period instead of the consumption period I select. My electricity supply is uninterrupted, and I am not disputing any amount charged.",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Your portal will not save my agreed communication preferences and it exports another account period instead of the consumption period I select."
+    },
+    "notes": "Two contracted portal defects; explicitly no physical outage or billing dispute.",
+    "testType": "explicit",
+    "multiPoint": true,
+    "tags": [
+      "portal-not-outage",
+      "energy",
+      "two-service-defects"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-15",
+    "lang": "en",
+    "summary": "Feedback for the support team",
+    "description": "Not a complaint at all: the agent explained my water tariff clearly, and the statement is exactly right. I just wanted to pass on some positive feedback.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Positive feedback contains complaint terminology but no defect.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "praise",
+      "complaint-word"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-16",
+    "lang": "en",
+    "summary": "Terminology in your English help page",
+    "description": "Does the word \"complaint\" on your help page mean the same thing as \"claim\"? I am translating a glossary, not reporting a problem with any service.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Metalinguistic request, no factual complaint.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "metalinguistic",
+      "complaint-word"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-17",
+    "lang": "en",
+    "summary": "Public review wording for a research exercise",
+    "description": "For a language exercise I copied this public review: \"My gas was cut off even though I had paid every bill.\" The reviewer is someone I do not know. I am not a gas customer and I am not representing them. Is there a public guide to the terms used in review responses?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Third-party outage quotation only; do not trigger continuity on someone else's quoted allegation.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "third-party-quotation",
+      "outage-vocabulary"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-18",
+    "lang": "en",
+    "summary": "Practice question for staff training",
+    "description": "If this were a complaint about a duplicated mobile payment, would the sample form ask for the invoice number? This is a fictional training question; there is no actual duplicated payment.",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Explicit hypothetical with negation of a real payment problem.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "hypothetical",
+      "billing-vocabulary",
+      "training"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-19",
+    "lang": "en",
+    "summary": "General information after reading a consumer case study",
+    "description": "A consumer case study describes another household receiving parcels at the wrong address. That is not my household, and I am not submitting anything for them. Do you publish general delivery-address guidance?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Information request about another person's case, not a representative complaint.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "someone-elses-case",
+      "guidance-request"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  },
+  {
+    "id": "R3-EN-20",
+    "lang": "en",
+    "summary": "Request to change the next renewal option",
+    "description": "For my next home insurance renewal, I would like to choose monthly payments if that option is available. The current annual payment matches my agreement and nothing has been charged incorrectly. Can you tell me how to request the change?",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    },
+    "notes": "Prospective contract change with no alleged defect; a service request can still have handling obligations.",
+    "testType": "negative",
+    "multiPoint": false,
+    "tags": [
+      "prospective-request",
+      "insurance",
+      "incidencia-not-complaint"
+    ],
+    "sourceUrls": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2025-26698"
+    ]
+  }
+]

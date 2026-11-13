@@ -1,0 +1,302 @@
+[
+  {
+    "id": "ho-es-h1",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Pregunta sobre un cargo en el recibo",
+    "description": "Hola, quería preguntar una cosa del recibo de septiembre. Me habéis seguido pasando el recibo después de dar de baja el servicio en junio y quiero que me lo devolváis. También necesito el desglose corregido.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Me habéis seguido pasando el recibo después de dar de baja el servicio en junio y quiero que me lo devolváis."
+  },
+  {
+    "id": "ho-es-h2",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Consulta de esta mañana",
+    "description": "¿Me podéis decir si hay una avería? Llevamos desde anoche sin calefacción y en casa hay una persona mayor.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Llevamos desde anoche sin calefacción y en casa hay una persona mayor."
+  },
+  {
+    "id": "ho-es-h3",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Seguimiento de la visita",
+    "description": "Os escribo otra vez porque el técnico no vino ni el martes ni el jueves. Sigo esperando que alguien me llame para cerrar una cita. Necesito que me confirméis el día.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Os escribo otra vez porque el técnico no vino ni el martes ni el jueves."
+  },
+  {
+    "id": "ho-es-h4",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Aclaración",
+    "description": "Perdonad las molestias, solo quería comentar que el importe de octubre no coincide con la lectura del contador. Llevo desde el día 3 esperando que lo reviséis.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Perdonad las molestias, solo quería comentar que el importe de octubre no coincide con la lectura del contador."
+  },
+  {
+    "id": "ho-es-h5",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Aviso del portal",
+    "description": "Buenas, ¿sabéis algo del corte? El agua lleva cortada desde las seis de la mañana y nadie ha colgado un aviso.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "El agua lleva cortada desde las seis de la mañana y nadie ha colgado un aviso."
+  },
+  {
+    "id": "ho-es-h6",
+    "lang": "es",
+    "kind": "hidden",
+    "summary": "Duda de la última factura",
+    "description": "Quería consultar dos cosas de la última factura. Primero, hay un cargo que no reconozco de 22 €. Segundo, necesito que me enviéis la factura rectificada.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Primero, hay un cargo que no reconozco de 22 €."
+  },
+  {
+    "id": "ho-es-e1",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Escrito de disconformidad",
+    "description": "Por la presente les comunico mi disconformidad con el cargo de noviembre y solicito la devolución de 36 € en el plazo que corresponda.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Por la presente les comunico mi disconformidad con el cargo de noviembre y solicito la devolución de 36 € en el plazo que corresponda."
+  },
+  {
+    "id": "ho-es-e2",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Reclamación por la interrupción",
+    "description": "Presento esta reclamación porque el suministro de agua estuvo interrumpido durante toda la tarde de ayer.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "Presento esta reclamación porque el suministro de agua estuvo interrumpido durante toda la tarde de ayer."
+  },
+  {
+    "id": "ho-es-e3",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Queja formal",
+    "description": "Quiero dejar constancia de una queja formal: habéis ignorado mi solicitud de baja desde el 2 de octubre.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "Quiero dejar constancia de una queja formal: habéis ignorado mi solicitud de baja desde el 2 de octubre."
+  },
+  {
+    "id": "ho-es-e4",
+    "lang": "es",
+    "kind": "explicit",
+    "summary": "Reclamación",
+    "description": "Esta es mi reclamación. Quiero que me devolváis el cargo duplicado de 15 €. También exijo una explicación por escrito.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "Quiero que me devolváis el cargo duplicado de 15 €."
+  },
+  {
+    "id": "ho-es-n1",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Solo una consulta",
+    "description": "No es una queja, solo tengo una pregunta: ¿a qué hora abre la oficina de atención?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-es-n2",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Dónde está el formulario",
+    "description": "He visto la palabra queja en el formulario del portal. ¿Me indicáis qué casilla marco si solo quiero información?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-es-n3",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Entender el recibo",
+    "description": "¿Me podéis explicar las líneas del recibo de octubre? No digo que esté mal, solo no entiendo el concepto de alquiler del equipo.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-es-n4",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Opinión del contador nuevo",
+    "description": "El contador nuevo se lee fácil y la aplicación va bien. El manual es un poco largo, pero no tengo ninguna queja del servicio.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-es-n5",
+    "lang": "es",
+    "kind": "none",
+    "summary": "Cierre",
+    "description": "Gracias por la visita de ayer. Ya funciona todo y no necesito nada más.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-en-h1",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Question about a direct debit",
+    "description": "Hi, quick question about last month. You kept taking the direct debit after I cancelled in June, and I would like that money back. I also need the corrected statement.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "You kept taking the direct debit after I cancelled in June, and I would like that money back."
+  },
+  {
+    "id": "ho-en-h2",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Supply question",
+    "description": "Can you tell me if there is a fault on your side? We have had no heating since last night and there is an older person in the flat.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "We have had no heating since last night and there is an older person in the flat."
+  },
+  {
+    "id": "ho-en-h3",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Visit follow-up",
+    "description": "I am writing again because the engineer missed both Tuesday and Thursday. I am still waiting for someone to book the visit. Please confirm a day.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "I am writing again because the engineer missed both Tuesday and Thursday."
+  },
+  {
+    "id": "ho-en-h4",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "October amount",
+    "description": "Sorry to bother you. The October amount does not line up with the meter reading, and I have been asking for a review since the 3rd.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "The October amount does not line up with the meter reading, and I have been asking for a review since the 3rd."
+  },
+  {
+    "id": "ho-en-h5",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Building notice",
+    "description": "Morning. Do you know about the stoppage? The water has been cut off since six and nobody has posted a notice.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "The water has been cut off since six and nobody has posted a notice."
+  },
+  {
+    "id": "ho-en-h6",
+    "lang": "en",
+    "kind": "hidden",
+    "summary": "Two things on the latest bill",
+    "description": "I wanted to ask about two things on the latest bill. There is a charge I do not recognise for 22 EUR. I also need the bill reissued.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "There is a charge I do not recognise for 22 EUR."
+  },
+  {
+    "id": "ho-en-e1",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Notice of dissatisfaction",
+    "description": "I am writing to record my dissatisfaction with the November charge and to request repayment of 36 EUR within the applicable period.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "I am writing to record my dissatisfaction with the November charge and to request repayment of 36 EUR within the applicable period."
+  },
+  {
+    "id": "ho-en-e2",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Complaint about the interruption",
+    "description": "I wish to register a complaint because the water supply was interrupted for the whole of yesterday afternoon.",
+    "expectComplaint": true,
+    "expectCategory": "outage",
+    "expectQuote": "I wish to register a complaint because the water supply was interrupted for the whole of yesterday afternoon."
+  },
+  {
+    "id": "ho-en-e3",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Formal note",
+    "description": "I want this on record as a formal complaint: my cancellation request has been ignored since 2 October.",
+    "expectComplaint": true,
+    "expectCategory": "general",
+    "expectQuote": "I want this on record as a formal complaint: my cancellation request has been ignored since 2 October."
+  },
+  {
+    "id": "ho-en-e4",
+    "lang": "en",
+    "kind": "explicit",
+    "summary": "Complaint",
+    "description": "This is a complaint. I want a refund of the duplicate 15 EUR charge. I also demand a written explanation.",
+    "expectComplaint": true,
+    "expectCategory": "billing",
+    "expectQuote": "I want a refund of the duplicate 15 EUR charge."
+  },
+  {
+    "id": "ho-en-n1",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Just a question",
+    "description": "This is not a complaint, I just have a question: what time does the service desk open?",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-en-n2",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Form help",
+    "description": "The heading says formal complaint, but I am only asking where to upload a meter photo.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-en-n3",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Understanding the bill",
+    "description": "Can you explain the lines on the October bill? I am not saying it is wrong. I just do not understand the equipment rental line.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-en-n4",
+    "lang": "en",
+    "kind": "none",
+    "summary": "Thoughts on the new meter",
+    "description": "The new meter is easy to read and the app works well. The booklet is a bit long, but I have no formal complaint about the service.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  },
+  {
+    "id": "ho-en-n5",
+    "lang": "en",
+    "kind": "none",
+    "summary": "All sorted",
+    "description": "Thanks, the engineer came yesterday and everything is working. I do not need anything else.",
+    "expectComplaint": false,
+    "expectCategory": "none",
+    "expectQuote": null
+  }
+]
