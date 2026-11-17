@@ -1,0 +1,482 @@
+[
+  {
+    "id": "es-01",
+    "lang": "es",
+    "summary": "",
+    "description": "¿Me podéis explicar por qué en la factura de octubre me habeis cobrado dos veces la cuota de la fibra? Acabo de mirar el extracto y salen dos cargos de 39,90 € el mismo día.",
+    "authorCategory": "billing",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "¿Me podéis explicar por qué en la factura de octubre me habeis cobrado dos veces la cuota de la fibra?"
+    }
+  },
+  {
+    "id": "es-02",
+    "lang": "es",
+    "summary": "",
+    "description": "Llevo desde las siete de la mañana sin internet y el móvil casi no pilla. Es insoportable, trabajo en remoto y no puedo ni abrir el correo.",
+    "authorCategory": "outage",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Llevo desde las siete de la mañana sin internet y el móvil casi no pilla."
+    }
+  },
+  {
+    "id": "es-03",
+    "lang": "es",
+    "summary": "",
+    "description": "Buenos días. Os dejo el contrato 441298 por si lo necesitáis. Ayer me quedé en casa de 9 a 14 h esperando al técnico y no vino nadie, ni una llamada para avisar. ¿Me podéis dar otra cita esta semana?",
+    "authorCategory": "missed_visit",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Ayer me quedé en casa de 9 a 14 h esperando al técnico y no vino nadie, ni una llamada para avisar."
+    }
+  },
+  {
+    "id": "es-04",
+    "lang": "es",
+    "summary": "",
+    "description": "El técnico pasó el martes, toqueteó el router un rato y se fue diciendo que ya estaba. Pues no: la línea se sigue cayendo cada dos por tres. La reparación ha quedado a medias.",
+    "authorCategory": "unfinished_repair",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "La reparación ha quedado a medias."
+    }
+  },
+  {
+    "id": "es-05",
+    "lang": "es",
+    "summary": "",
+    "description": "En septiembre me prometisteis la devolución de 86 euros por el servicio q no funcionó en agosto. Estamos a mediados de noviembre y el reembolso no ha llegado. Quiero que me lo ingreséis ya.",
+    "authorCategory": "refund",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Estamos a mediados de noviembre y el reembolso no ha llegado."
+    }
+  },
+  {
+    "id": "es-06",
+    "lang": "es",
+    "summary": "",
+    "description": "El mes pasado pedí el cambio a la tarifa de 300 Mb y me confirmasteis que empezaba el día 1. Sigo pagando la de 600 y con la misma velocidad de antes. No me habéis aplicado el cambio de contrato.",
+    "authorCategory": "contract_change",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "No me habéis aplicado el cambio de contrato."
+    }
+  },
+  {
+    "id": "es-07",
+    "lang": "es",
+    "summary": "",
+    "description": "Ayer llamé al 1444 y la operadora me cortó en seco, me habló de malas maneras y colgó sin resolver nada. Me parece un trato inaceptable.",
+    "authorCategory": "rude_treatment",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Ayer llamé al 1444 y la operadora me cortó en seco, me habló de malas maneras y colgó sin resolver nada."
+    }
+  },
+  {
+    "id": "es-08",
+    "lang": "es",
+    "summary": "",
+    "description": "Os escribí el 3 de noviembre (ticket 88321) para aclarar un cargo y nadie me ha contestado. Llevo dos semanas sin respuesta a una petición anterior.",
+    "authorCategory": "unanswered",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Os escribí el 3 de noviembre (ticket 88321) para aclarar un cargo y nadie me ha contestado."
+    }
+  },
+  {
+    "id": "es-09",
+    "lang": "es",
+    "summary": "",
+    "description": "El decodificador que me enviasteis el viernes vino con la tapa rota y no enciende.",
+    "authorCategory": "defective_product",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "El decodificador que me enviasteis el viernes vino con la tapa rota y no enciende."
+    }
+  },
+  {
+    "id": "es-10",
+    "lang": "es",
+    "summary": "",
+    "description": "Revisando la última liquidación veo un concepto de 12,50 € titulado ajuste de cuota que nadie me había comunicado. Ese cargo no encaja con lo pactado y no estoy de acuerdo.",
+    "authorCategory": "billing",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Ese cargo no encaja con lo pactado y no estoy de acuerdo."
+    }
+  },
+  {
+    "id": "es-11",
+    "lang": "es",
+    "summary": "",
+    "description": "Soy cliente desde 2019, contrato 77210. Por lo demás el servicio me iba bien, pero este mes la tv se pixeliza constante mente y se corta el partido a la mitad. Esto no es lo que estoy pagando.",
+    "authorCategory": "outage",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "pero este mes la tv se pixeliza constante mente y se corta el partido a la mitad."
+    }
+  },
+  {
+    "id": "es-12",
+    "lang": "es",
+    "summary": "",
+    "description": "Mira, os lo digo clarito. Llevo un mes pidiendo que me activéis la línea nueva del piso de mis padres y todavía no hay ni fecha. Os llamé dos veces y en ambas me dijisteis que ya os llaman. Estoy hasta las narices de que me deis largas.",
+    "authorCategory": "delayed_installation",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Llevo un mes pidiendo que me activéis la línea nueva del piso de mis padres y todavía no hay ni fecha."
+    }
+  },
+  {
+    "id": "es-13",
+    "lang": "es",
+    "summary": "",
+    "description": "Hola, ¿podríais indicarme cuál es el plazo de permanencia que me queda y si hay penalización si me cambio de tarifa en enero?",
+    "authorCategory": "info_request",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "es-14",
+    "lang": "es",
+    "summary": "",
+    "description": "Buenos días. Quisiera cambiar el plan familiar al de 5 líneas, manteniendo el mismo titular. ¿Me podéis confirmar disponibilidad y el precio mensual?",
+    "authorCategory": "plan_change",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "es-15",
+    "lang": "es",
+    "summary": "",
+    "description": "Al final se resolvió el corte de ayer y ya va todo bien. Gracias por la gestión, no tengo nada más que añadir.",
+    "authorCategory": "thanks",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "es-16",
+    "lang": "es",
+    "summary": "",
+    "description": "Os escribo para retirar la reclamación que presenté el viernes por el cargo duplicado. Esta mañana he visto el reembolso en la cuenta y doy el asunto por cerrado. Perdón por las molestias.",
+    "authorCategory": "withdrawn",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "es-17",
+    "lang": "es",
+    "summary": "",
+    "description": "Una consulta: si en el futuro me cortarais la línea sin aviso, ¿podría presentar una queja formal y pedir una compensación? De momento no me ha pasado nada, solo quiero saber cómo funcionaría.",
+    "authorCategory": "hypothetical",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "es-18",
+    "lang": "es",
+    "summary": "",
+    "description": "No es una queja, solo pregunto: ¿el roaming en Francia está incluido en mi tarifa actual o tengo que activar algún bono antes del viaje?",
+    "authorCategory": "negated_complaint",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "es-19",
+    "lang": "es",
+    "summary": "",
+    "description": "Me ha llegado la factura de noviembre y no entiendo el desglose de servicios adicionales. ¿Me podéis explicar qué incluye esa partida, por favor? No estoy reclamando nada, solo quiero entenderla.",
+    "authorCategory": "info_request",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "es-20",
+    "lang": "es",
+    "summary": "",
+    "description": "El 15 de diciembre nos mudamos a otro piso en el mismo municipio y quiero trasladar la fibra. ¿Qué trámites hace falta y cuánto tarda el alta en la dirección nueva?",
+    "authorCategory": "relocation_request",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-01",
+    "lang": "en",
+    "summary": "",
+    "description": "I was charged €54.99 this month instead of the €29.90 promotional rate you confirmed in the email of 4 October. That is not the price we agreed.",
+    "authorCategory": "billing",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "I was charged €54.99 this month instead of the €29.90 promotional rate you confirmed in the email of 4 October."
+    }
+  },
+  {
+    "id": "en-02",
+    "lang": "en",
+    "summary": "",
+    "description": "Our shop line went down last night at around 11pm and it is still dead this morning. Card payments are offline and we have had to turn customers away. I need this restored today.",
+    "authorCategory": "outage",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "Our shop line went down last night at around 11pm and it is still dead this morning."
+    }
+  },
+  {
+    "id": "en-03",
+    "lang": "en",
+    "summary": "",
+    "description": "Good afternoon, account 228910. I took the morning off work for the engineer slot between 10 and 14. Nobody showed up and I did not even get a text to cancel. Please book a new visit this week.",
+    "authorCategory": "missed_visit",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "Nobody showed up and I did not even get a text to cancel."
+    }
+  },
+  {
+    "id": "en-04",
+    "lang": "en",
+    "summary": "",
+    "description": "The technician came on Tuesday, poked at the router for twenty minutes and left saying it was fixed. It wasn't: the connection still drops every half hour. The repair was left unfinished.",
+    "authorCategory": "unfinished_repair",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The repair was left unfinished."
+    }
+  },
+  {
+    "id": "en-05",
+    "lang": "en",
+    "summary": "",
+    "description": "You said I would get an 86 euro refund in September for the days the service was down. Its mid-November and the money still hasnt landed in my account. I want it paid now.",
+    "authorCategory": "refund",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "Its mid-November and the money still hasnt landed in my account."
+    }
+  },
+  {
+    "id": "en-06",
+    "lang": "en",
+    "summary": "",
+    "description": "You confirmed my number would be ported to you last Friday and I would keep the same line. Today I still have no service on that number and the donor operator says you never completed the request. The transfer has not been applied.",
+    "authorCategory": "portability",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The transfer has not been applied."
+    }
+  },
+  {
+    "id": "en-07",
+    "lang": "en",
+    "summary": "",
+    "description": "I went into the shop on Calle Mayor yesterday and the assistant rolled her eyes, talked over me and walked off before anything was sorted. That is not an acceptable way to treat a customer.",
+    "authorCategory": "rude_treatment",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "I went into the shop on Calle Mayor yesterday and the assistant rolled her eyes, talked over me and walked off before anything was sorted."
+    }
+  },
+  {
+    "id": "en-08",
+    "lang": "en",
+    "summary": "",
+    "description": "I emailed billing on 2 November about a roaming charge (you gave me case C-91044) and I have not had a single reply. Two weeks with no answer to a previous request is too long.",
+    "authorCategory": "unanswered",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "I emailed billing on 2 November about a roaming charge (you gave me case C-91044) and I have not had a single reply."
+    }
+  },
+  {
+    "id": "en-09",
+    "lang": "en",
+    "summary": "",
+    "description": "The handset you sent on Friday arrived with a cracked screen and it will not charge. I need a replacement sent out.",
+    "authorCategory": "defective_product",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "The handset you sent on Friday arrived with a cracked screen and it will not charge."
+    }
+  },
+  {
+    "id": "en-10",
+    "lang": "en",
+    "summary": "",
+    "description": "Looking through the latest bill I found three international calls to a Mexican number I have never dialled. I dispute those charges; they are not mine.",
+    "authorCategory": "billing",
+    "expected": {
+      "isComplaint": true,
+      "category": "billing",
+      "mustCiteSubstring": "I dispute those charges; they are not mine."
+    }
+  },
+  {
+    "id": "en-11",
+    "lang": "en",
+    "summary": "",
+    "description": "We've been with you since 2020 and in general I have no issue with the account team. That said, the 600 Mb plan we pay for is topping out at about 80 Mb on a wired test, which is nowhere near what was advertised. This is not what I'm paying for.",
+    "authorCategory": "service_not_as_advertised",
+    "expected": {
+      "isComplaint": true,
+      "category": "general",
+      "mustCiteSubstring": "the 600 Mb plan we pay for is topping out at about 80 Mb on a wired test, which is nowhere near what was advertised."
+    }
+  },
+  {
+    "id": "en-12",
+    "lang": "en",
+    "summary": "",
+    "description": "Look, I'll be blunt. You suspended my line this morning for non-payment even though the bill left my account on the 3rd, and I have the bank receipt. Reinstate it and stop threatening a service I have already paid for.",
+    "authorCategory": "wrongful_suspension",
+    "expected": {
+      "isComplaint": true,
+      "category": "outage",
+      "mustCiteSubstring": "You suspended my line this morning for non-payment even though the bill left my account on the 3rd, and I have the bank receipt."
+    }
+  },
+  {
+    "id": "en-13",
+    "lang": "en",
+    "summary": "",
+    "description": "What documents do I need to add my partner as an authorised person on the account, and can that be done by email?",
+    "authorCategory": "info_request",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-14",
+    "lang": "en",
+    "summary": "",
+    "description": "I would like to upgrade from the 300 Mb plan to the 1 Gb one from the 1st of December, same address. Can you confirm the new monthly fee and whether a technician visit is needed?",
+    "authorCategory": "plan_change",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-15",
+    "lang": "en",
+    "summary": "",
+    "description": "Just wanted to thank Marta on the chat. She explained the roaming pack clearly and I have everything I need.",
+    "authorCategory": "thanks",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-16",
+    "lang": "en",
+    "summary": "",
+    "description": "Please close ticket BR-4412. I complained last week that the engineer had missed the visit, but he came on Saturday and finished the job, so I am withdrawing that complaint.",
+    "authorCategory": "withdrawn",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-17",
+    "lang": "en",
+    "summary": "",
+    "description": "If a future bill arrived late because of a bank delay, could I complain and ask you to waive a late fee? This has not happened; I just want to know the policy.",
+    "authorCategory": "hypothetical",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-18",
+    "lang": "en",
+    "summary": "",
+    "description": "This is not a complaint, I am only asking: can I add a second TV decoder to the existing contract and what would it cost per month?",
+    "authorCategory": "negated_complaint",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-19",
+    "lang": "en",
+    "summary": "",
+    "description": "The December bill has a line called equipment rental that I have not noticed before. Could you tell me what device it refers to? I am not saying it is wrong, I just want to know what it is.",
+    "authorCategory": "info_request",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  },
+  {
+    "id": "en-20",
+    "lang": "en",
+    "summary": "",
+    "description": "Hi, where can I download the official complaints form, and where would I send it if I ever needed to? Thanks in advance.",
+    "authorCategory": "info_request",
+    "expected": {
+      "isComplaint": false,
+      "category": "not_complaint",
+      "mustCiteSubstring": null
+    }
+  }
+]

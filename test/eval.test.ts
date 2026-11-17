@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { R3_SCORE_BEFORE, R4_SCORE_BEFORE, R5_SCORE_BEFORE, loadFixtures, runEval } from '../src/eval/run';
+import { R3_SCORE_BEFORE, R4_SCORE_BEFORE, R5_SCORE_BEFORE, R6_SCORE_BEFORE, loadFixtures, runEval } from '../src/eval/run';
 
 describe('fixture eval', () => {
   it('prints original, hard, and independent scores', () => {
@@ -19,7 +19,7 @@ describe('fixture eval', () => {
       expect(fixtures.filter((ticket) => ticket.lang === 'en')).toHaveLength(15);
     }
 
-    const { original, hard, independent, r3, r4, r5 } = runEval();
+    const { original, hard, independent, r3, r4, r5, r6 } = runEval();
     expect(original.passed).toBeGreaterThanOrEqual(28);
     expect(hard.passed).toBeGreaterThanOrEqual(27);
     expect(original.line).toBe('30/30');
@@ -77,5 +77,23 @@ describe('fixture eval', () => {
     expect(r5.falseAlarms).toBe(0);
     expect(r5.wrongClock).toBe(0);
     expect(r5.invented).toBe(0);
+    const r6Digest = createHash('sha256').update(readFileSync('fixtures/r6.json')).digest('hex');
+    expect(r6Digest).toBe('3042ce2848dc3426caba8740165b39f8698708c62347af0444e60b82a8ee8d04');
+    expect(R6_SCORE_BEFORE.recovered).toBe('16/24');
+    expect(R6_SCORE_BEFORE.falseAlarms).toBe('3/16');
+    expect(R6_SCORE_BEFORE.evidence).toBe('11/24');
+    expect(R6_SCORE_BEFORE.esRecovered).toBe('10/12');
+    expect(R6_SCORE_BEFORE.enRecovered).toBe('6/12');
+    expect(r6.complaints).toBe(24);
+    expect(r6.negatives).toBe(16);
+    expect(r6.recovered).toBe(16);
+    expect(r6.falseAlarms).toBe(3);
+    expect(r6.evidence).toBe(11);
+    expect(r6.es.recovered).toBe(10);
+    expect(r6.es.evidence).toBe(7);
+    expect(r6.es.falseAlarms).toBe(2);
+    expect(r6.en.recovered).toBe(6);
+    expect(r6.en.evidence).toBe(4);
+    expect(r6.en.falseAlarms).toBe(1);
   });
 });

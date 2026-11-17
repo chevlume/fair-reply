@@ -260,6 +260,41 @@ export const R4_SCORE_BEFORE = {
  * First blind score of fixtures/r5.json, recorded before any rule change
  * that used its misses. Not recomputed.
  */
+/**
+ * First blind score of fixtures/r6.json, recorded before any rule change
+ * that used its misses. Evidence is correct only when the cited sentence
+ * contains the author's complaintSentence. Not recomputed.
+ */
+export const R6_SCORE_BEFORE = {
+  recovered: '16/24',
+  falseAlarms: '3/16',
+  evidence: '11/24',
+  esRecovered: '10/12',
+  esEvidence: '7/12',
+  esFalseAlarms: '2/8',
+  enRecovered: '6/12',
+  enEvidence: '4/12',
+  enFalseAlarms: '1/8',
+  misses: [
+    'es-05 wrong citation',
+    'es-07 wrong citation',
+    'es-08 wrong citation',
+    'es-10 not-detected',
+    'es-11 not-detected',
+    'es-16 false alarm',
+    'es-17 false alarm',
+    'en-02 not-detected',
+    'en-03 not-detected',
+    'en-04 not-detected',
+    'en-05 not-detected',
+    'en-06 wrong citation',
+    'en-07 not-detected',
+    'en-10 not-detected',
+    'en-11 wrong citation',
+    'en-17 false alarm',
+  ].join('; '),
+} as const;
+
 export const R5_SCORE_BEFORE = {
   full: '30/44',
   recovered: '24/28',
@@ -374,13 +409,73 @@ export function printR3(report: R3Report, label: string): void {
   }
 }
 
-export function runEval(): { original: EvalReport; hard: EvalReport; independent: IndependentReport; r3: R3Report; r4: R3Report; r5: R3Report } {
+export interface R6Report {
+  recovered: number;
+  complaints: number;
+  falseAlarms: number;
+  negatives: number;
+  evidence: number;
+  es: { recovered: number; complaints: number; evidence: number; falseAlarms: number; negatives: number };
+  en: { recovered: number; complaints: number; evidence: number; falseAlarms: number; negatives: number };
+  misses: string[];
+}
+
+/** Score fixtures/r6.json. The description is the author's text, unchanged. */
+export function scoreR6(file = path.join(process.cwd(), 'fixtures', 'r6.json')): R6Report {
+  const rows = JSON.parse(readFileSync(file, 'utf8')) as Array<{
+    id: string;
+    lang: 'es' | 'en';
+    description: string;
+    expected: { isComplaint: boolean; mustCiteSubstring: string | null };
+  }>;
+  const misses: string[] = [];
+  const blank = () => ({ recovered: 0, complaints: 0, evidence: 0, falseAlarms: 0, negatives: 0 });
+  const es = blank();
+  const en = blank();
+  for (const row of rows) {
+    const actual = detectByRules(row.description);
+    const lang = row.lang === 'es' ? es : en;
+    const literal = actual.quote == null || row.description.includes(actual.quote);
+    const expectedSentence = row.expected.mustCiteSubstring;
+    const cited = expectedSentence != null
+      && actual.quote != null
+      && literal
+      && (actual.quote === expectedSentence || actual.quote.includes(expectedSentence));
+    if (row.expected.isComplaint) {
+      lang.complaints += 1;
+      if (actual.isComplaint) lang.recovered += 1;
+      if (cited) lang.evidence += 1;
+      if (!actual.isComplaint || !cited) {
+        misses.push(`${row.id} ${actual.isComplaint ? 'wrong citation' : 'not-detected'}`);
+      }
+    } else {
+      lang.negatives += 1;
+      if (actual.isComplaint) {
+        lang.falseAlarms += 1;
+        misses.push(`${row.id} false alarm`);
+      }
+    }
+  }
+  return {
+    recovered: es.recovered + en.recovered,
+    complaints: es.complaints + en.complaints,
+    falseAlarms: es.falseAlarms + en.falseAlarms,
+    negatives: es.negatives + en.negatives,
+    evidence: es.evidence + en.evidence,
+    es,
+    en,
+    misses,
+  };
+}
+
+export function runEval(): { original: EvalReport; hard: EvalReport; independent: IndependentReport; r3: R3Report; r4: R3Report; r5: R3Report; r6: R6Report } {
   const original = scoreFixtures(loadFixtures(path.join(process.cwd(), 'fixtures', 'tickets.json')));
   const hard = scoreFixtures(loadFixtures(path.join(process.cwd(), 'fixtures', 'hard.json')));
   const independent = scoreIndependent();
   const r3 = scoreR3();
   const r4 = scoreR3(path.join(process.cwd(), 'fixtures', 'r4.json'));
   const r5 = scoreR3(path.join(process.cwd(), 'fixtures', 'r5.json'));
+  const r6 = scoreR6();
   console.log(`Fair Reply rules detector (fixtures): ${original.line}`);
   console.log(`Fair Reply rules detector (hard): ${hard.line}`);
   console.log(`Fair Reply independent (full): ${independent.line}`);
@@ -413,8 +508,19 @@ export function runEval(): { original: EvalReport; hard: EvalReport; independent
   console.log(`r5 FIRST invented citations: ${R5_SCORE_BEFORE.invented}`);
   console.log(`r5 FIRST misses: ${R5_SCORE_BEFORE.misses}`);
   printR3(r5, 'r5');
+  console.log(`r6 FIRST recovered: ${R6_SCORE_BEFORE.recovered}`);
+  console.log(`r6 FIRST false alarms: ${R6_SCORE_BEFORE.falseAlarms}`);
+  console.log(`r6 FIRST evidence: ${R6_SCORE_BEFORE.evidence}`);
+  console.log(`r6 FIRST misses: ${R6_SCORE_BEFORE.misses}`);
+  console.log(`r6 recovered: ${r6.recovered}/${r6.complaints}`);
+  console.log(`r6 false alarms: ${r6.falseAlarms}/${r6.negatives}`);
+  console.log(`r6 evidence: ${r6.evidence}/${r6.complaints}`);
+  console.log(`r6 es recovered: ${r6.es.recovered}/${r6.es.complaints} evidence ${r6.es.evidence}/${r6.es.complaints} false alarms ${r6.es.falseAlarms}/${r6.es.negatives}`);
+  console.log(`r6 en recovered: ${r6.en.recovered}/${r6.en.complaints} evidence ${r6.en.evidence}/${r6.en.complaints} false alarms ${r6.en.falseAlarms}/${r6.en.negatives}`);
+  if (r6.misses.length === 0) console.log('r6 misses: none');
+  else console.log(`r6 misses: ${r6.misses.join('; ')}`);
   for (const failure of [...original.failures, ...hard.failures]) {
     console.log(`${failure.id} expected ${JSON.stringify(failure.expected)} actual ${JSON.stringify(failure.actual)}`);
   }
-  return { original, hard, independent, r3, r4, r5 };
+  return { original, hard, independent, r3, r4, r5, r6 };
 }
