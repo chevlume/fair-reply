@@ -1,5 +1,6 @@
 import type { FairReplyCase } from './case/types';
-import { readCaseProperty, readMirroredCase, listMirroredCases } from './jira/store';
+import { readCaseProperty, readMirroredCase, listMirroredCases, postInternalComment } from './jira/store';
+import { internalDraftNote } from './rovo/internalNote';
 import { refreshCaseFromIssue } from './runtime';
 import { atRiskView, complaintStatusView, coverageView, draftView, refreshAtRiskRows } from './rovo/view';
 
@@ -59,6 +60,21 @@ export async function checkCoverage(payload: ActionPayload = {}, context?: Actio
   const issueKey = issueKeyFrom(payload, context);
   if (!issueKey) return { error: 'Provide an issue key.' };
   return coverageView(issueKey, await loadFreshCase(issueKey));
+}
+
+/**
+ * Files the acknowledgement as an internal note.
+ * Rovo asks the person to confirm before a non-GET action runs.
+ * This function does not post a public comment.
+ */
+export async function saveInternalDraft(payload: ActionPayload = {}, context?: ActionContext) {
+  const issueKey = issueKeyFrom(payload, context);
+  if (!issueKey) return { posted: false, sent: false, customerReplySent: false, error: 'Provide an issue key.' };
+  const record = await loadCase(issueKey);
+  const note = internalDraftNote(record, issueKey);
+  if (!note.ok) return { posted: false, sent: false, customerReplySent: false, error: note.error };
+  await postInternalComment(issueKey, note.body);
+  return { posted: true, internal: true, sent: false, customerReplySent: false, issueKey };
 }
 
 /** Returns a draft acknowledgement. Does not post a comment. */

@@ -7,6 +7,7 @@ import type { FairReplyCase } from '../case/types';
 import { article137Reminder, unansweredPoints } from '../detect/coverage';
 import { obligationLine } from '../legal/followUp';
 import { article136Reminder } from '../legal/sameLanguage';
+import { closeSentence } from '../text/sentences';
 
 export interface PanelPoint {
   text: string;
@@ -119,9 +120,9 @@ export function confirmationHistory(record: Pick<FairReplyCase, 'confirmation' |
   }
   const when = formatMadrid(record.confirmationAt);
   if (record.confirmation === 'confirmed') {
-    return `A person confirmed this complaint on ${when} (${TIMEZONE}). Reason: ${record.confirmationReason}. This review note is not a legal finding, and it does not restart the clock.`;
+    return `A person confirmed this complaint on ${when} (${TIMEZONE}). Reason: ${closeSentence(record.confirmationReason)} This review note is not a legal finding, and it does not restart the clock.`;
   }
-  return `A person overruled the detector on ${when} (${TIMEZONE}). Reason: ${record.confirmationReason}. The complaint clock is cleared. This review note is not a legal finding.`;
+  return `A person overruled the detector on ${when} (${TIMEZONE}). Reason: ${closeSentence(record.confirmationReason)} The complaint clock is cleared. This review note is not a legal finding.`;
 }
 
 function formatMadrid(iso: string | null): string {

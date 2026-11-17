@@ -50,7 +50,7 @@ On a Jira Service Management work item, Fair Reply reads the request and shows o
 
 A person confirms or overrules the reading only with a written reason. Confirming does not restart the clock. The acknowledgement draft is customer text in Spanish (usted) or English, matching a clear filing language, plus a separate agent note. The draft is not sent. Article 13.6 and 13.7 reminders are advisory and do not by themselves block Resolve. If an admin has added the workflow validator to Resolve or Close, those transitions are blocked while points are open. Until a validator check has been recorded, the panel states that conditional. It does not read the workflow.
 
-Complaints Officer, a Rovo agent, can report status, list stored complaints inside a horizon, check coverage, and draft an acknowledgement. It does not send or resolve.
+Complaints Officer, a Rovo agent, can report status, list stored complaints inside a horizon, check coverage, and draft an acknowledgement. A fifth action files that draft as an internal note only after the person asks and confirms. It does not send a customer reply and it does not resolve.
 
 ### How we built it
 
@@ -66,7 +66,7 @@ A panel a judge can name in four states, with the proving sentence copied from t
 
 ### What we learned
 
-The first blind scores were low: 11/40, 14/40, and 17/40 on three held-out files. The later 40/40 scores are regression scores after the rules were generalised by class. Those files are no longer blind. A high regression score is not evidence about unseen wording.
+The first blind scores were low: 11/40, 14/40, and 17/40 on three held-out files. The later 40/40 scores are regression scores after the rules were generalised by class. Those files are no longer blind. A later set, `fixtures/r5.json`, scored 30/44 on its first run and 40/44 after class changes, with 0/16 false alarms both times. A high regression score is not evidence about unseen wording.
 
 ### What's next
 
@@ -101,10 +101,10 @@ Installation link: `[INSTALL_LINK]` — replace this only after `forge install -
 
 1. Install Fair Reply on a Jira Service Management Cloud site where you are logged in. Forge apps are not visible to anonymous users. Leave `FAIR_REPLY_LLM` unset.
 2. Open a company-managed service project. The issue panel title is Fair Reply. Customers do not see it. Users who can edit the work item do.
-3. Optional, for the block shown in the video: in Advanced workflow configuration, add the validator named “Block resolve while complaint points are unanswered” to Resolve and Close, then publish the workflow. `jira:workflowValidator` is a Preview module. Atlassian documents it for company-managed projects. This manifest also lists team-managed. The documented path is company-managed. If you skip this step, the panel still classifies and the conditional line explains that Resolve is blocked only when the validator is on the transition.
+3. Optional, for the block shown in the video: add the validator named “Block resolve while complaint points are unanswered” to Resolve and Close, then publish the workflow. `jira:workflowValidator` is a Preview module. Its `projectTypes` property defaults to company-managed only. This manifest lists `company-managed` and `team-managed`, which is how Forge makes the rule available in both ([module reference](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-workflow-validator/), changelog CHANGE-2870, 27 October 2025). Company-managed projects use Advanced workflow configuration. Team-managed projects use the project workflow editor. If you skip this step, the panel still classifies and the conditional line explains that Resolve is blocked only when the validator is on the transition.
 4. Walk [docs/DEMO.md](DEMO.md). The nine scenarios were exercised on a development demo site. Use synthetic text only. The live demo issues on that site were ITS-6265 through ITS-6274. This repository does not record which key holds which sentence. Match a key by the summary already on the issue. Do not paste real customer data.
 5. Confirm and Not a complaint stay disabled until a reason is typed. The hint is “Write a reason to enable”. Confirming does not restart the clock.
-6. In Rovo, ask Complaints Officer for status, the at-risk list, coverage, or a draft. A site needs Rovo. Atlassian says demo sites include Rovo. If the at-risk list is empty, it reads the Forge KVS mirror, not every work item on the site.
+6. In Rovo, ask Complaints Officer for status, the at-risk list, coverage, or a draft. Then ask it to file the draft as an internal note and confirm the action. The note is internal. A site needs Rovo. Atlassian says demo sites include Rovo. If the at-risk list is empty, it reads the Forge KVS mirror, not every work item on the site. A ready-to-close complaint is not listed.
 7. After a scope change, `forge deploy` then `forge install --upgrade`. A deploy that does not change permissions does not need a reinstall.
 
 Local checks, with no site: `npm install`, `npm test`, `npm run typecheck`. `npm run eval` prints the frozen first scores and then the current regression scores.
@@ -143,4 +143,4 @@ Official limit, from the 2026 rules: the video should be less than five minutes,
 
 ## Honest limits
 
-The rules detector generalises poorly to wording it has not been shown. The frozen first scores are the evidence. Article 13.6 compares Spanish and English only. Article 13.3 and 13.8 are not implemented. The panel does not know whether the validator is on the workflow until that validator has run. The at-risk list can miss a case that has an issue property but no KVS mirror until the five-minute sweep copies it.
+The rules detector generalises poorly to wording it has not been shown. The frozen first scores are the evidence: 11/40, 14/40, 17/40, and 30/44 on `fixtures/r5.json`. Article 13.6 compares Spanish and English only. Article 13.3 and 13.8 are not implemented. The panel does not know whether the validator is on the workflow until that validator has run. The at-risk list can miss a case that has an issue property but no KVS mirror until the five-minute sweep copies it.

@@ -16,7 +16,8 @@ const NO_PUBLIC =
   'Resolve/close is blocked. State: Uncovered points. This complaint has no public reply. Decision support only, not legal advice.';
 
 function pointLabel(points: string[], point: string): string {
-  return `point ${points.indexOf(point) + 1} (${point})`;
+  const inner = point.trim().replace(/[.!?…]+$/u, '');
+  return `point ${points.indexOf(point) + 1} (${inner})`;
 }
 
 function replyChecked(sentence: string | null): string {

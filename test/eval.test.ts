@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { R3_SCORE_BEFORE, R4_SCORE_BEFORE, loadFixtures, runEval } from '../src/eval/run';
+import { R3_SCORE_BEFORE, R4_SCORE_BEFORE, R5_SCORE_BEFORE, loadFixtures, runEval } from '../src/eval/run';
 
 describe('fixture eval', () => {
   it('prints original, hard, and independent scores', () => {
@@ -19,7 +19,7 @@ describe('fixture eval', () => {
       expect(fixtures.filter((ticket) => ticket.lang === 'en')).toHaveLength(15);
     }
 
-    const { original, hard, independent, r3, r4 } = runEval();
+    const { original, hard, independent, r3, r4, r5 } = runEval();
     expect(original.passed).toBeGreaterThanOrEqual(28);
     expect(hard.passed).toBeGreaterThanOrEqual(27);
     expect(original.line).toBe('30/30');
@@ -62,5 +62,20 @@ describe('fixture eval', () => {
     expect(r4.wrongClock).toBe(0);
     expect(r4.invented).toBe(0);
     expect(r4.misses).toEqual([]);
+    const r5Digest = createHash('sha256').update(readFileSync('fixtures/r5.json')).digest('hex');
+    expect(r5Digest).toBe('dbb546e1201b52ec485fa7d6a06a440724489b073f76f5044f41b1e245f71c7b');
+    expect(R5_SCORE_BEFORE.full).toBe('30/44');
+    expect(R5_SCORE_BEFORE.recovered).toBe('24/28');
+    expect(R5_SCORE_BEFORE.falseAlarms).toBe('0/16');
+    expect(R5_SCORE_BEFORE.wrongClock).toBe('0');
+    expect(R5_SCORE_BEFORE.invented).toBe('0');
+    expect(r5.total).toBe(44);
+    expect(r5.complaints).toBe(28);
+    expect(r5.negatives).toBe(16);
+    expect(r5.line).toBe('40/44');
+    expect(r5.recovered).toBe(28);
+    expect(r5.falseAlarms).toBe(0);
+    expect(r5.wrongClock).toBe(0);
+    expect(r5.invented).toBe(0);
   });
 });

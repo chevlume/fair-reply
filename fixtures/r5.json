@@ -1,0 +1,310 @@
+[
+  {
+    "id": "R5-ES-01",
+    "lang": "es",
+    "summary": "Recibo repetido",
+    "description": "En el cargo de abril me habéis vuelto a pasar el mismo recibo. El primero ya estaba pagado.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "vuelto a pasar el mismo recibo" }
+  },
+  {
+    "id": "R5-ES-02",
+    "lang": "es",
+    "summary": "Importe distinto",
+    "description": "El importe de la última factura no corresponde a la tarifa que tengo contratada. Quiero que lo reviséis.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "no corresponde a la tarifa" }
+  },
+  {
+    "id": "R5-ES-03",
+    "lang": "es",
+    "summary": "Concepto no contratado",
+    "description": "Me habéis facturado un seguro de mantenimiento que yo no he contratado. Pedid que lo quiten del recibo.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "no he contratado" }
+  },
+  {
+    "id": "R5-ES-04",
+    "lang": "es",
+    "summary": "Devolución",
+    "description": "Les solicito que me devuelvan los 19 € cobrados de más en marzo. El contador no se ha movido.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "cobrados de más" }
+  },
+  {
+    "id": "R5-ES-05",
+    "lang": "es",
+    "summary": "Domiciliación",
+    "description": "El banco me confirma que habéis girado el recibo dos veces el mismo día. Necesito el abono de uno de ellos.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "dos veces el mismo día" }
+  },
+  {
+    "id": "R5-ES-06",
+    "lang": "es",
+    "summary": "Sin agua en casa",
+    "description": "Llevamos desde anoche sin agua en el piso. Los grifos no dan nada y el contrato sigue vigente.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "sin agua en el piso" }
+  },
+  {
+    "id": "R5-ES-07",
+    "lang": "es",
+    "summary": "Se fue la luz",
+    "description": "Se ha ido la luz del edificio y sigue sin volver. No es un corte avisado.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "Se ha ido la luz" }
+  },
+  {
+    "id": "R5-ES-08",
+    "lang": "es",
+    "summary": "Sin gas",
+    "description": "Desde esta mañana no tenemos gas y no podemos cocinar. El suministro contratado está activo.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "no tenemos gas" }
+  },
+  {
+    "id": "R5-ES-09",
+    "lang": "es",
+    "summary": "Calefacción parada",
+    "description": "La calefacción lleva cortada dos días y en casa hace frío. No nos habéis avisado de ninguna obra.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "calefacción lleva cortada" }
+  },
+  {
+    "id": "R5-ES-10",
+    "lang": "es",
+    "summary": "Visita que no fue",
+    "description": "El técnico no se presentó a la cita de las diez. Es la tercera vez que pasa y nadie llama para avisar.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "no se presentó" }
+  },
+  {
+    "id": "R5-ES-11",
+    "lang": "es",
+    "summary": "Sin respuesta",
+    "description": "Llevo tres correos pidiendo que cerréis la incidencia y nadie contesta. Quiero una respuesta por escrito.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "nadie contesta" }
+  },
+  {
+    "id": "R5-ES-12",
+    "lang": "es",
+    "summary": "Trabajo a medias",
+    "description": "Dejasteis la reparación a medias y la avería sigue igual. Exijo que volváis a terminarla.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "reparación a medias" }
+  },
+  {
+    "id": "R5-ES-13",
+    "lang": "es",
+    "summary": "Titular parado",
+    "description": "Mi solicitud de cambio de titular sigue parada desde hace un mes. Nadie tramita el expediente.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "sigue parada" }
+  },
+  {
+    "id": "R5-ES-14",
+    "lang": "es",
+    "summary": "Trato inaceptable",
+    "description": "El trato en la llamada de ayer fue inaceptable. Me colgaron cuando pedí el número de referencia.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "fue inaceptable" }
+  },
+  {
+    "id": "R5-EN-01",
+    "lang": "en",
+    "summary": "Charged twice",
+    "description": "You charged me twice for the same April bill. The first payment already cleared.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "charged me twice" }
+  },
+  {
+    "id": "R5-EN-02",
+    "lang": "en",
+    "summary": "Bill does not match",
+    "description": "The amount on this invoice does not match the tariff on my contract. Please put the bill right.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "does not match the tariff" }
+  },
+  {
+    "id": "R5-EN-03",
+    "lang": "en",
+    "summary": "Extra product",
+    "description": "I was billed for a maintenance plan I never agreed to. Take that line off the invoice.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "never agreed to" }
+  },
+  {
+    "id": "R5-EN-04",
+    "lang": "en",
+    "summary": "Money back",
+    "description": "I want the extra 19 EUR returned. The meter reading did not change and you still took it.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "extra 19 EUR returned" }
+  },
+  {
+    "id": "R5-EN-05",
+    "lang": "en",
+    "summary": "Direct debit again",
+    "description": "The direct debit left my account two times on Monday. I need one of those payments back.",
+    "expected": { "isComplaint": true, "category": "billing", "mustCiteSubstring": "two times on Monday" }
+  },
+  {
+    "id": "R5-EN-06",
+    "lang": "en",
+    "summary": "Power is out",
+    "description": "The power is out in the flat and it has not come back. There was no notice of work.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "power is out" }
+  },
+  {
+    "id": "R5-EN-07",
+    "lang": "en",
+    "summary": "No water",
+    "description": "We have had no water since last night. The taps are dry and the contract is still active.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "no water since last night" }
+  },
+  {
+    "id": "R5-EN-08",
+    "lang": "en",
+    "summary": "Heating off",
+    "description": "The heating has been off for two days and the flat is cold. Nobody told us about a shutdown.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "heating has been off" }
+  },
+  {
+    "id": "R5-EN-09",
+    "lang": "en",
+    "summary": "Gas stopped",
+    "description": "There is no gas this morning, so we cannot cook. The supply on the account is supposed to be on.",
+    "expected": { "isComplaint": true, "category": "outage", "mustCiteSubstring": "no gas this morning" }
+  },
+  {
+    "id": "R5-EN-10",
+    "lang": "en",
+    "summary": "Missed visit",
+    "description": "The engineer did not come to the ten o'clock appointment. This is the third time and nobody rang.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "did not come" }
+  },
+  {
+    "id": "R5-EN-11",
+    "lang": "en",
+    "summary": "No reply",
+    "description": "I have written three times asking you to close the fault and nobody answers. I want a written reply.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "nobody answers" }
+  },
+  {
+    "id": "R5-EN-12",
+    "lang": "en",
+    "summary": "Left unfinished",
+    "description": "You left the repair unfinished and the fault is the same. I demand that someone come back and finish it.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "left the repair unfinished" }
+  },
+  {
+    "id": "R5-EN-13",
+    "lang": "en",
+    "summary": "Name change stuck",
+    "description": "My request to change the account name has been stuck for a month. Nobody is processing the file.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "has been stuck" }
+  },
+  {
+    "id": "R5-EN-14",
+    "lang": "en",
+    "summary": "Hung up",
+    "description": "The way I was spoken to on yesterday's call was unacceptable. They hung up when I asked for the reference.",
+    "expected": { "isComplaint": true, "category": "general", "mustCiteSubstring": "was unacceptable" }
+  },
+  {
+    "id": "R5-ES-15",
+    "lang": "es",
+    "summary": "Horario de pago",
+    "description": "¿Cómo puedo pagar la factura por transferencia y cuál es el horario de caja?",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-ES-16",
+    "lang": "es",
+    "summary": "Gracias",
+    "description": "Gracias, la avería de ayer ya está resuelta y el agua sale con normalidad.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-ES-17",
+    "lang": "es",
+    "summary": "Tarifa futura",
+    "description": "Quiero pasar a la tarifa plana a partir del mes que viene. La factura de este mes es correcta.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-ES-18",
+    "lang": "es",
+    "summary": "No es una queja",
+    "description": "No es una queja. Solo necesito el duplicado del contrato porque lo he perdido.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-ES-19",
+    "lang": "es",
+    "summary": "Domiciliar",
+    "description": "¿Puedo domiciliar el pago en otra cuenta y dónde lo solicito?",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-ES-20",
+    "lang": "es",
+    "summary": "Teléfono de averías",
+    "description": "¿Cuál es el teléfono de averías para consultarlo, sin que haya ninguna incidencia ahora?",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-ES-21",
+    "lang": "es",
+    "summary": "Ejercicio",
+    "description": "Para un ejercicio de clase, ¿es correcto decir reclamación cuando solo pido un horario? No tengo ningún problema con el servicio.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-ES-22",
+    "lang": "es",
+    "summary": "Pago recibido",
+    "description": "Solo quiero saber si habéis recibido la transferencia de ayer. No discuto ningún importe.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-15",
+    "lang": "en",
+    "summary": "Opening hours",
+    "description": "What are the opening hours of the office, and how do I pay by bank transfer?",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-16",
+    "lang": "en",
+    "summary": "Thank you",
+    "description": "Thank you, yesterday's fault is fixed and the water is running normally.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-17",
+    "lang": "en",
+    "summary": "Next month's plan",
+    "description": "I want to move to the flat tariff from next month. This month's bill is correct.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-18",
+    "lang": "en",
+    "summary": "Not a complaint",
+    "description": "This is not a complaint. I only need a copy of the contract because I lost mine.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-19",
+    "lang": "en",
+    "summary": "Meter reading how-to",
+    "description": "How do I submit a meter reading before the deadline in the app?",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-20",
+    "lang": "en",
+    "summary": "Fault line",
+    "description": "What is the fault telephone number? There is no outage at the property right now.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-21",
+    "lang": "en",
+    "summary": "Class exercise",
+    "description": "I am writing an essay. Is it correct to say complaint when I only want the opening hours? I am not reporting anything wrong.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  },
+  {
+    "id": "R5-EN-22",
+    "lang": "en",
+    "summary": "Payment arrived",
+    "description": "I am only asking whether yesterday's transfer arrived. I am not disputing any amount.",
+    "expected": { "isComplaint": false, "category": "not_complaint", "mustCiteSubstring": null }
+  }
+]

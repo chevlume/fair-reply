@@ -56,7 +56,9 @@ modules:
       function: consume-case
 
   # https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-workflow-validator/
-  # Preview module. Stable enough for production per Atlassian, still preview.
+  # Preview module. projectTypes defaults to company-managed only.
+  # Listing both makes the rule available in company-managed and team-managed projects.
+  # See also changelog CHANGE-2870 (27 October 2025).
   # An admin must add it to the Resolve and Close transitions. See README.
   jira:workflowValidator:
     - key: fair-reply-validator
@@ -99,6 +101,7 @@ modules:
         - list-at-risk-complaints
         - check-reply-coverage
         - draft-acknowledgement
+        - save-internal-draft
 
   # https://developer.atlassian.com/platform/forge/manifest-reference/modules/rovo-action/
   action:
@@ -156,6 +159,20 @@ modules:
           type: string
           required: true
           description: Key of the work item the draft is about.
+    - key: save-internal-draft
+      name: Save draft as internal note
+      function: rovo-note
+      actionVerb: TRIGGER
+      description: >
+        File the acknowledgement draft as an internal note when the person asks.
+        Does not post a public comment and does not send a customer reply.
+        Rovo asks the person to confirm before this action runs.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          required: true
+          description: Key of the work item that should receive the internal note.
 
   # https://developer.atlassian.com/platform/forge/manifest-reference/modules/llm/
   # Declared so a later opt-in does not need a manifest redesign.
@@ -188,6 +205,8 @@ modules:
       handler: actions.checkCoverage
     - key: rovo-draft
       handler: actions.draftAck
+    - key: rovo-note
+      handler: actions.saveInternalDraft
 
 resources:
   - key: panel

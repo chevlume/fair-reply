@@ -256,6 +256,34 @@ export const R4_SCORE_BEFORE = {
   ].join('; '),
 } as const;
 
+/**
+ * First blind score of fixtures/r5.json, recorded before any rule change
+ * that used its misses. Not recomputed.
+ */
+export const R5_SCORE_BEFORE = {
+  full: '30/44',
+  recovered: '24/28',
+  falseAlarms: '0/16',
+  wrongClock: '0',
+  invented: '0',
+  misses: [
+    'R5-ES-01 not-detected',
+    'R5-ES-07 wrong citation',
+    'R5-ES-10 wrong citation',
+    'R5-ES-12 wrong citation',
+    'R5-ES-13 wrong citation',
+    'R5-ES-14 wrong citation',
+    'R5-EN-04 wrong citation',
+    'R5-EN-05 not-detected',
+    'R5-EN-06 not-detected',
+    'R5-EN-10 wrong citation',
+    'R5-EN-11 not-detected',
+    'R5-EN-12 wrong citation',
+    'R5-EN-13 wrong citation',
+    'R5-EN-14 wrong citation',
+  ].join('; '),
+} as const;
+
 function missKinds(input: {
   expectedComplaint: boolean;
   actualComplaint: boolean;
@@ -346,12 +374,13 @@ export function printR3(report: R3Report, label: string): void {
   }
 }
 
-export function runEval(): { original: EvalReport; hard: EvalReport; independent: IndependentReport; r3: R3Report; r4: R3Report } {
+export function runEval(): { original: EvalReport; hard: EvalReport; independent: IndependentReport; r3: R3Report; r4: R3Report; r5: R3Report } {
   const original = scoreFixtures(loadFixtures(path.join(process.cwd(), 'fixtures', 'tickets.json')));
   const hard = scoreFixtures(loadFixtures(path.join(process.cwd(), 'fixtures', 'hard.json')));
   const independent = scoreIndependent();
   const r3 = scoreR3();
   const r4 = scoreR3(path.join(process.cwd(), 'fixtures', 'r4.json'));
+  const r5 = scoreR3(path.join(process.cwd(), 'fixtures', 'r5.json'));
   console.log(`Fair Reply rules detector (fixtures): ${original.line}`);
   console.log(`Fair Reply rules detector (hard): ${hard.line}`);
   console.log(`Fair Reply independent (full): ${independent.line}`);
@@ -377,8 +406,15 @@ export function runEval(): { original: EvalReport; hard: EvalReport; independent
   console.log(`r4 FIRST invented citations: ${R4_SCORE_BEFORE.invented}`);
   console.log(`r4 FIRST misses: ${R4_SCORE_BEFORE.misses}`);
   printR3(r4, 'r4');
+  console.log('r5 FIRST full: ' + R5_SCORE_BEFORE.full + ' before the class changes. r5 is no longer a blind holdout.');
+  console.log(`r5 FIRST recovered: ${R5_SCORE_BEFORE.recovered}`);
+  console.log(`r5 FIRST false alarms: ${R5_SCORE_BEFORE.falseAlarms}`);
+  console.log(`r5 FIRST wrong clocks: ${R5_SCORE_BEFORE.wrongClock}`);
+  console.log(`r5 FIRST invented citations: ${R5_SCORE_BEFORE.invented}`);
+  console.log(`r5 FIRST misses: ${R5_SCORE_BEFORE.misses}`);
+  printR3(r5, 'r5');
   for (const failure of [...original.failures, ...hard.failures]) {
     console.log(`${failure.id} expected ${JSON.stringify(failure.expected)} actual ${JSON.stringify(failure.actual)}`);
   }
-  return { original, hard, independent, r3, r4 };
+  return { original, hard, independent, r3, r4, r5 };
 }

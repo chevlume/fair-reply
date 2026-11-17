@@ -1,6 +1,7 @@
 import type { FairReplyCase } from '../case/types';
 import { unansweredPoints } from '../detect/coverage';
 import { TIMEZONE } from '../legal/assumptions';
+import { closeSentence } from '../text/sentences';
 
 /** Status fields already present on a Jira issue-updated event, when the product sends them. */
 export interface IssueStatusSnapshot {
@@ -56,7 +57,7 @@ export function monitoringOrValidatorLine(record: Pick<FairReplyCase, 'validator
 export function resolvedWithGapsLine(record: FairReplyCase): string | null {
   if (!record.isComplaint || !record.resolvedWithGapsAt || isReadyToClose(record)) return null;
   const open = unansweredPoints(record.points, record.answered);
-  const point = open[0] ? ` Open point: ${open[0]}.` : '';
+  const point = open[0] ? ` Open point: ${closeSentence(open[0])}` : '';
   const missingReply = record.hasPublicReply ? '' : ' There is no public reply.';
   const when = formatMadrid(record.resolvedWithGapsAt);
   return `This request was marked resolved while points were still uncovered (${when}, ${TIMEZONE}).${missingReply}${point} Fair Reply did not reverse that. That transition was not blocked.`;

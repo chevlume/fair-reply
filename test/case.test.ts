@@ -5,6 +5,7 @@ import { formatCheckedDidNotCover, formatCoveringReply, pointReplyLine } from '.
 import { evaluateClose } from '../src/workflow/validate';
 import { shouldRemind } from '../src/workflow/remind';
 import { confirmationHistory, panelFromCase, emptyPanel } from '../src/panel/model';
+import { closeSentence } from '../src/text/sentences';
 import { complaintStatusView, draftView } from '../src/rovo/view';
 import { MONITORING_LINE } from '../src/workflow/resolutionWatch';
 import { DISCLAIMER } from '../src/legal/disclaimer';
@@ -102,6 +103,12 @@ describe('case record', () => {
     expect(history).toBe(panel.confirmationHistory);
     expect(status.found && status.confirmationHistory).toBe(history);
     expect(history).toContain(reviewReason);
+    const punctuated = applyConfirmation(detected, 'confirmed', 'This is a billing complaint.', reviewAt);
+    const punctuatedHistory = confirmationHistory(punctuated) ?? '';
+    expect(punctuatedHistory).toContain('Reason: This is a billing complaint. This review');
+    expect(punctuatedHistory).not.toContain('complaint..');
+    expect(closeSentence('billing complaint')).toBe('billing complaint.');
+    expect(closeSentence('billing complaint.')).toBe('billing complaint.');
     expect(history).toContain('Europe/Madrid');
     expect(history).toContain('7 Nov 2026');
     expect(history).toContain('12:10');

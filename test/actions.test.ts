@@ -188,6 +188,17 @@ describe('Complaints Officer actions', () => {
     expect(empty.complaints).toEqual([]);
     expect(empty.emptyMessage).toBe(AT_RISK_EMPTY);
   });
+
+  it('leaves a ready-to-close complaint out of the at-risk list', () => {
+    const now = new Date('2026-11-06T10:00:00.000Z');
+    const ready = stubCase(now.toISOString());
+    ready.hasPublicReply = true;
+    ready.points = ['The invoice is wrong.'];
+    ready.answered = [true];
+    const listed = atRiskView([{ issueKey: 'SUP-9', record: ready }], now, 48);
+    expect(listed.count).toBe(0);
+    expect(listed.complaints).toEqual([]);
+  });
 });
 
 function stubCase(deadlineAt: string): FairReplyCase {

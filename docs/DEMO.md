@@ -16,7 +16,7 @@ Official references:
 
 Panel title: **Fair Reply** (`jira:issuePanel`, `render: native`).
 
-Validator name: **Block resolve while complaint points are unanswered**. Atlassian documents `jira:workflowValidator` as a Preview module that applies to company-managed projects. This manifest also lists `team-managed` under that module. The documented way to attach it is the company-managed path below.
+Validator name: **Block resolve while complaint points are unanswered**. `jira:workflowValidator` is a Preview module. The [module reference](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-workflow-validator/) says `projectTypes` defaults to company-managed only, and that listing `company-managed` and `team-managed` makes the rule available in both. Atlassian’s 27 October 2025 changelog (CHANGE-2870) says team-managed workflows can use Forge validators when that property includes `team-managed`. This manifest lists both. The company-managed path is Advanced workflow configuration. On a team-managed project the same validator is added in the project workflow editor.
 
 Scopes: `read:jira-work`, `write:jira-work`, `manage:jira-configuration`, `storage:app`.
 
@@ -77,3 +77,5 @@ Use synthetic text only. Created time in these checks is the demo anchor Friday 
 8. On a complaint, post a covering motivated refusal that does not name extrajudicial routes, for example: `No podemos devolver los 48 € porque la lectura del contador coincide con la tarifa contratada.` Expect the article 13.7 reminder. That reminder does not by itself block Resolve.
 
 9. On the Spanish billing request, post an English public reply, for example: `We have refunded the 48 EUR of the duplicate March bill.` Expect the article 13.6 reminder. Fair Reply does not translate or send the reply. A missing language match does not by itself block Resolve.
+
+10. In Rovo, ask Complaints Officer to file the acknowledgement as an internal note. Confirm the action when Rovo asks. The work item gains an internal note that starts with “Internal copy of the acknowledgement draft. This note was not sent to the customer.” There is no public comment and no customer reply. The action does nothing on a request that is not a complaint.

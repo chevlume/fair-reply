@@ -46,7 +46,9 @@ describe('manifest', () => {
       'list-at-risk-complaints',
       'check-reply-coverage',
       'draft-acknowledgement',
+      'save-internal-draft',
       'actionVerb: GET',
+      'actionVerb: TRIGGER',
       'render: native',
       'ignoreSelf: true',
       'timeoutSeconds: 120',
@@ -60,7 +62,7 @@ describe('manifest', () => {
 
   it('keeps function keys inside the 23 character limit', () => {
     const keys = [...manifest.matchAll(/^\s*- key: ([a-z0-9-]+)$/gm)].map((match) => match[1]);
-    const functionKeys = ['panel-resolver', 'enqueue-issue', 'consume-case', 'validate-reply', 'remind-deadlines', 'rovo-status', 'rovo-at-risk', 'rovo-coverage', 'rovo-draft'];
+    const functionKeys = ['panel-resolver', 'enqueue-issue', 'consume-case', 'validate-reply', 'remind-deadlines', 'rovo-status', 'rovo-at-risk', 'rovo-coverage', 'rovo-draft', 'rovo-note'];
     for (const key of functionKeys) {
       expect(keys).toContain(key);
       expect(key.length).toBeLessThanOrEqual(23);

@@ -47,7 +47,7 @@ const RULES: readonly Rule[] = [
   { id: 'en-still-not', weight: 3, re: /\b(still have not|you still have not)\b/ },
   { id: 'en-waiting', weight: 3, re: /\bi have been waiting\b/ },
   { id: 'en-without', weight: 3, re: /\b(have been without|still without|without electricity|without water|no water)\b/ },
-  { id: 'en-nobody', weight: 3, re: /\bnobody is answering\b/ },
+  { id: 'en-nobody', weight: 3, re: /\bnobody (is answering|answers|answered|replies|replied)\b/ },
   { id: 'en-tired', weight: 3, re: /\btired of calling\b/ },
   { id: 'en-power', weight: 3, re: /\bpower has been out\b/ },
   { id: 'en-meter', weight: 3, re: /\bdoes not match\b/ },
@@ -92,7 +92,7 @@ const SUPPLY_NOUN = 'agua|gas|luz|electricidad|calefaccion|suministro|water|heat
 const SUPPLY_INTERRUPTION = new RegExp(
   `\\b(?:no llega|sin llegar|seguimos sin|sigue sin|still without|there has been no|has been no|no tenemos|no hay|has had no|have had no)\\s+(?:\\w+\\s+){0,5}(?:${SUPPLY_NOUN})\\b|\\b(?:sin|without)\\s+(?:el\\s+|la\\s+|mi\\s+|our\\s+|any\\s+|the\\s+)?(?:${SUPPLY_NOUN})\\b|\\b(?:suspend\\w*|desconect\\w*|disconnect\\w*|cut off)\\b(?:\\s+\\w+){0,5}\\s(?:${SUPPLY_NOUN})\\b|\\b(?:${SUPPLY_NOUN})\\b(?:\\s+\\w+){0,5}\\s(?:suspend\\w*|desconect\\w*|disconnect\\w*|cut off)\\b|\\bno (?:electricity|power)\\b`,
 );
-const OUTAGE = /\b(sin agua|sin luz|sin suministro|sin electricidad|sin calefaccion|corte de luz|corte de agua|corte de gas|no water|no sale agua|without water|without electricity|no heating|have had no heating|power has been out|power cut|cut off|blackout|lleva cortada|interrumpid|suministro de agua|water supply|no tenemos gas|se fue la luz|a oscuras|estuvo cortada|has been off|no gas|in the dark|went out at|has stopped completely|cannot make or receive|unusable since|conexion fija|fixed telephone|fixed line)\b/;
+const OUTAGE = /\b(sin agua|sin luz|sin suministro|sin electricidad|sin calefaccion|corte de luz|corte de agua|corte de gas|no water|no sale agua|without water|without electricity|no heating|have had no heating|power has been out|power is out|water is off|electricity is out|power cut|cut off|blackout|lleva cortada|interrumpid|suministro de agua|water supply|no tenemos gas|se fue la luz|se ha ido la luz|se ha ido el agua|se ha ido el gas|a oscuras|estuvo cortada|has been off|no gas|in the dark|went out at|has stopped completely|cannot make or receive|unusable since|conexion fija|fixed telephone|fixed line)\b/;
 const BILLING = /\b(factura\w*|recibo\w*|cobrad\w*|cobro\w*|devolv\w*|reembols\w*|abono\w*|invoic\w*|billed|charg\w*|refund\w*|importe\w*|lectura del contador|meter reading|direct debit|money back|repayment|no coincide|does not line up|no reconozco|do not recognise|cargo\w*|reintegro\w*|no cuadra|does not square|indebido|undue|de mas|volviendo a cargar|took the payment again|return the extra|paid at the counter|cuota|tarifa)\b/;
 const NOT_PROVIDER = new Set(['gracias', 'podeis', 'quereis', 'sabeis', 'teneis', 'deberiais', 'podriais']);
 const FAILURE = /\b(no|sin|ni|nunca|not|never|without|instead|rather|although|though|despite|pero|aunque|but|pese a|a pesar|twice|dos veces|wrong|incorrect|empty|vacio|cannot|will not|wont|disconnected|disconnect|suspend|discard|refused|unidentified|withdrawn|image-only|difier\w*|diferenc\w*|rechaz\w*)\b/;
@@ -171,7 +171,22 @@ function isSupplyInterruption(folded: string): boolean {
 
 /** A due visit, call, or collection did not happen. */
 function missedAttendance(folded: string): boolean {
-  return /\b(no (?:apareci\w*|vino|vinieron|avis\w*)|nadie (?:me )?(?:ha )?(?:llam\w*|vino|vini\w*|acud\w*)|nobody (?:turned up|came|rang|called|phoned)|never arrived|hung up|me cuelgan|nos cuelgan|colgaron|sin recoger\w*|been missed)\b/.test(folded);
+  return /\b(no (?:apareci\w*|vino|vinieron|avis\w*|se present\w*)|did not (?:come|turn up|attend)|didn't come|nadie (?:me )?(?:ha )?(?:llam\w*|vino|vini\w*|acud\w*)|nobody (?:turned up|came|rang|called|phoned|answers|answered)|never arrived|hung up|me cuelgan|nos cuelgan|colgaron|sin recoger\w*|been missed)\b/.test(folded);
+}
+
+/** A repair or job was left incomplete. */
+function leftUnfinished(folded: string): boolean {
+  return /\b(a medias|left the repair unfinished|left the job unfinished|unfinished and the fault)\b/.test(folded);
+}
+
+/** A request or account change has stopped moving. */
+function stalledCase(folded: string): boolean {
+  return /\b(sigue parad[oa]|has been stuck|stuck for)\b/.test(folded);
+}
+
+/** The same bill or debit was taken again. */
+function repeatedMoney(folded: string): boolean {
+  return /\b(vuelto a (?:pasar|cobrar|cargar|girar)|charged me twice|charged twice|debited two times|taken two times|two times on)\b/.test(folded);
 }
 
 /** A portal, app, or website the customer cannot use. Not a supply interruption. */
@@ -265,6 +280,7 @@ export function scoreSentence(sentence: string, document = ''): SentenceScore {
   if (isSuppressed(folded)) return { weight: 0, ruleId: null };
   if (!isPureQuestion(sentence) && best.weight < 5) {
     if (isSupplyInterruption(folded)) best = { weight: 5, ruleId: 'supply-interrupted' };
+    else if (repeatedMoney(folded) || leftUnfinished(folded) || stalledCase(folded)) best = { weight: 5, ruleId: 'repeated-or-stalled' };
     else if (
       isDefectiveProvision(sentence)
       || isExcludedCharge(sentence, document || sentence)
@@ -295,7 +311,7 @@ function defectRank(sentence: string, document = ''): number {
   if (isPureQuestion(sentence) || isRequestSentence(sentence)) return 0;
   const folded = fold(sentence);
   if (deniesDefect(folded) || isSuppressed(folded)) return 0;
-  if (isSupplyInterruption(folded)) return 3;
+  if (isSupplyInterruption(folded) || repeatedMoney(folded) || leftUnfinished(folded) || stalledCase(folded)) return 3;
   if (isExcludedCharge(sentence, document || sentence)) return 2;
   if (hasProvider(folded) && FAILURE.test(folded)) return 2;
   if (
