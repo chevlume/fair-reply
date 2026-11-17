@@ -92,7 +92,7 @@ const SUPPLY_NOUN = 'agua|gas|luz|electricidad|calefaccion|suministro|water|heat
 const SUPPLY_INTERRUPTION = new RegExp(
   `\\b(?:no llega|sin llegar|seguimos sin|sigue sin|still without|there has been no|has been no|no tenemos|no hay|has had no|have had no)\\s+(?:\\w+\\s+){0,5}(?:${SUPPLY_NOUN})\\b|\\b(?:sin|without)\\s+(?:el\\s+|la\\s+|mi\\s+|our\\s+|any\\s+|the\\s+)?(?:${SUPPLY_NOUN})\\b|\\b(?:suspend\\w*|desconect\\w*|disconnect\\w*|cut off)\\b(?:\\s+\\w+){0,5}\\s(?:${SUPPLY_NOUN})\\b|\\b(?:${SUPPLY_NOUN})\\b(?:\\s+\\w+){0,5}\\s(?:suspend\\w*|desconect\\w*|disconnect\\w*|cut off)\\b|\\bno (?:electricity|power)\\b`,
 );
-const OUTAGE = /\b(sin agua|sin luz|sin suministro|sin electricidad|sin calefaccion|corte de luz|corte de agua|corte de gas|no water|no sale agua|without water|without electricity|no heating|have had no heating|power has been out|power is out|water is off|electricity is out|power cut|cut off|blackout|lleva cortada|interrumpid|suministro de agua|water supply|no tenemos gas|se fue la luz|se ha ido la luz|se ha ido el agua|se ha ido el gas|a oscuras|estuvo cortada|has been off|no gas|in the dark|went out at|has stopped completely|cannot make or receive|unusable since|conexion fija|fixed telephone|fixed line)\b/;
+const OUTAGE = /\b(sin agua|sin luz|sin suministro|sin electricidad|sin calefaccion|corte de luz|corte de agua|corte de gas|no water|no sale agua|without water|without electricity|no heating|have had no heating|power has been out|power is out|water is off|electricity is out|power cut|cut off|blackout|lleva cortada|interrumpid|suministro de agua|water supply|no tenemos gas|se fue la luz|se ha ido la luz|se ha ido el agua|se ha ido el gas|a oscuras|estuvo cortada|has been off|no gas|in the dark|went out at|has stopped completely|cannot make or receive|unusable since|conexion fija|fixed telephone|fixed line|went down|still dead|pixeliz\w*|se corta)\b/;
 const BILLING = /\b(factura\w*|recibo\w*|cobrad\w*|cobro\w*|devolv\w*|reembols\w*|abono\w*|invoic\w*|billed|charg\w*|refund\w*|importe\w*|lectura del contador|meter reading|direct debit|money back|repayment|no coincide|does not line up|no reconozco|do not recognise|cargo\w*|reintegro\w*|no cuadra|does not square|indebido|undue|de mas|volviendo a cargar|took the payment again|return the extra|paid at the counter|cuota|tarifa)\b/;
 const NOT_PROVIDER = new Set(['gracias', 'podeis', 'quereis', 'sabeis', 'teneis', 'deberiais', 'podriais']);
 const FAILURE = /\b(no|sin|ni|nunca|not|never|without|instead|rather|although|though|despite|pero|aunque|but|pese a|a pesar|twice|dos veces|wrong|incorrect|empty|vacio|cannot|will not|wont|disconnected|disconnect|suspend|discard|refused|unidentified|withdrawn|image-only|difier\w*|diferenc\w*|rechaz\w*)\b/;
@@ -120,7 +120,19 @@ function hasProvider(folded: string): boolean {
 
 /** The sentence says there is no defect, or that the harm belongs to someone else. */
 function deniesDefect(folded: string): boolean {
-  return /\b(ningun (error|problema)|no veo|ninguna queja|no es una (queja|reclamacion)|no estoy describiendo|not reporting|not a problem|have not bought|has not bought|someone else|no tengo (poliza|contrato)|no tengo ningun problema|actuo por esa|no soy esa|not representing|not my experience|i am not a \w+ customer|not my household|sin problema|no ha habido|nothing wrong|coincide con lo contratado|exactly right|son correctos|there is no actual|no estoy notificando)\b/.test(folded);
+  return /\b(ningun (error|problema)|no veo|ninguna queja|no es una (queja|reclamacion)|no estoy describiendo|not reporting|not a problem|have not bought|has not bought|someone else|no tengo (poliza|contrato)|no tengo ningun problema|actuo por esa|no soy esa|not representing|not my experience|i am not a \w+ customer|not my household|sin problema|no ha habido|nothing wrong|coincide con lo contratado|exactly right|son correctos|there is no actual|no estoy notificando|have no issue|no issue with|no problem with)\b/.test(folded);
+}
+
+/** The writer is closing a past complaint, not raising a current one. */
+function isWithdrawn(folded: string): boolean {
+  return /\b(retirar la reclamacion|doy el asunto por cerrado|withdrawing that complaint|i am withdrawing|please close ticket)\b/.test(folded);
+}
+
+/** A question about what would happen later, with an explicit denial that it has happened. */
+function isOnlyHypothetical(folded: string): boolean {
+  const later = /\b(si en el futuro|if a future|in the future me cortarais|could i complain)\b/.test(folded);
+  const notYet = /\b(de momento no me ha pasado|no me ha pasado|this has not happened|has not happened|just want to know|solo quiero saber)\b/.test(folded);
+  return later && notYet;
 }
 
 /** What was contracted and what happened are stated against each other. */
@@ -171,12 +183,12 @@ function isSupplyInterruption(folded: string): boolean {
 
 /** A due visit, call, or collection did not happen. */
 function missedAttendance(folded: string): boolean {
-  return /\b(no (?:apareci\w*|vino|vinieron|avis\w*|se present\w*)|did not (?:come|turn up|attend)|didn't come|nadie (?:me )?(?:ha )?(?:llam\w*|vino|vini\w*|acud\w*)|nobody (?:turned up|came|rang|called|phoned|answers|answered)|never arrived|hung up|me cuelgan|nos cuelgan|colgaron|sin recoger\w*|been missed)\b/.test(folded);
+  return /\b(no (?:apareci\w*|vino|vinieron|avis\w*|se present\w*)|did not (?:come|turn up|attend)|didn't come|nadie (?:me )?(?:ha )?(?:llam\w*|vino|vini\w*|acud\w*|contest\w*)|nobody (?:turned up|came|rang|called|phoned|answers|answered|showed up)|never arrived|hung up|me cuelgan|nos cuelgan|colgaron|colgo\b|sin recoger\w*|been missed|have not had a (?:single )?reply|sin respuesta)\b/.test(folded);
 }
 
 /** A repair or job was left incomplete. */
 function leftUnfinished(folded: string): boolean {
-  return /\b(a medias|left the repair unfinished|left the job unfinished|unfinished and the fault)\b/.test(folded);
+  return /\b(a medias|left the repair unfinished|left the job unfinished|unfinished and the fault|was left unfinished|quedo a medias)\b/.test(folded);
 }
 
 /** A request or account change has stopped moving. */
@@ -187,6 +199,16 @@ function stalledCase(folded: string): boolean {
 /** The same bill or debit was taken again. */
 function repeatedMoney(folded: string): boolean {
   return /\b(vuelto a (?:pasar|cobrar|cargar|girar)|charged me twice|charged twice|debited two times|taken two times|two times on)\b/.test(folded);
+}
+
+/** Money that was promised back, or a charge the customer disputes. */
+function unpaidOrDisputed(folded: string): boolean {
+  return /\b(reembolso no ha llegado|no encaja con lo pactado|dispute (?:those|the|these) charges|not the price we agreed|still hasnt landed|still hasn't landed|money still hasnt|not what (?:i'm|i am) paying for|not what was advertised|nowhere near what was advertised|has not been applied|no me habeis aplicado|charged\b.{0,80}\binstead of)\b/.test(folded);
+}
+
+/** Rudeness, not a billing or supply fact. */
+function rudeTreatment(folded: string): boolean {
+  return /\b(not an acceptable way|trato inaceptable|malas maneras|rolled her eyes|talked over me)\b/.test(folded);
 }
 
 /** A portal, app, or website the customer cannot use. Not a supply interruption. */
@@ -280,7 +302,9 @@ export function scoreSentence(sentence: string, document = ''): SentenceScore {
   if (isSuppressed(folded)) return { weight: 0, ruleId: null };
   if (!isPureQuestion(sentence) && best.weight < 5) {
     if (isSupplyInterruption(folded)) best = { weight: 5, ruleId: 'supply-interrupted' };
-    else if (repeatedMoney(folded) || leftUnfinished(folded) || stalledCase(folded)) best = { weight: 5, ruleId: 'repeated-or-stalled' };
+    else if (repeatedMoney(folded) || leftUnfinished(folded) || stalledCase(folded) || unpaidOrDisputed(folded) || rudeTreatment(folded)) {
+      best = { weight: 5, ruleId: 'repeated-or-stalled' };
+    }
     else if (
       isDefectiveProvision(sentence)
       || isExcludedCharge(sentence, document || sentence)
@@ -311,7 +335,7 @@ function defectRank(sentence: string, document = ''): number {
   if (isPureQuestion(sentence) || isRequestSentence(sentence)) return 0;
   const folded = fold(sentence);
   if (deniesDefect(folded) || isSuppressed(folded)) return 0;
-  if (isSupplyInterruption(folded) || repeatedMoney(folded) || leftUnfinished(folded) || stalledCase(folded)) return 3;
+  if (isSupplyInterruption(folded) || repeatedMoney(folded) || leftUnfinished(folded) || stalledCase(folded) || unpaidOrDisputed(folded) || rudeTreatment(folded)) return 3;
   if (isExcludedCharge(sentence, document || sentence)) return 2;
   if (hasProvider(folded) && FAILURE.test(folded)) return 2;
   if (
@@ -365,6 +389,18 @@ function contextSuppressesLexicon(text: string): boolean {
 }
 
 export function detectByRules(text: string): Detection {
+  const foldedAll = fold(text);
+  if (isWithdrawn(foldedAll) || isOnlyHypothetical(foldedAll)) {
+    return {
+      isComplaint: false,
+      quote: null,
+      category: 'none',
+      ambiguous: false,
+      needsHumanReview: false,
+      engine: 'rules',
+      ruleId: null,
+    };
+  }
   const scoped = customerDisowns(text) ? stripQuotations(text) : text;
   const suppressLexicon = contextSuppressesLexicon(scoped);
   let bestWeight = 0;
