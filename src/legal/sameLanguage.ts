@@ -24,16 +24,20 @@ export function guessLanguage(text: string): FilingLanguage | null {
 export const ARTICLE_136_REMINDER =
   'The covering reply should be in the same language as the filing (article 13.6). Fair Reply does not translate or send the reply. A missing match does not by itself block Resolve. Decision support, not legal advice.';
 
-/** Reminder only. It does not un-answer a point and it does not block Resolve. */
+/**
+ * Reminder only. It does not un-answer a point and it does not block Resolve.
+ * Each public comment is judged on its own. One clear reply in the other
+ * language is enough. A mixed comment, or a short one, is ignored.
+ */
 export function article136Reminder(record: {
   isComplaint: boolean;
   filingLanguage?: FilingLanguage | null;
   analysedPublicComments?: string[];
 }): string | null {
   if (!record.isComplaint || !record.filingLanguage) return null;
-  const replies = (record.analysedPublicComments ?? []).join('\n').trim();
-  if (!replies) return null;
-  const replyLanguage = guessLanguage(replies);
-  if (!replyLanguage || replyLanguage === record.filingLanguage) return null;
-  return ARTICLE_136_REMINDER;
+  const mismatch = (record.analysedPublicComments ?? []).some((reply) => {
+    const replyLanguage = guessLanguage(reply);
+    return replyLanguage != null && replyLanguage !== record.filingLanguage;
+  });
+  return mismatch ? ARTICLE_136_REMINDER : null;
 }

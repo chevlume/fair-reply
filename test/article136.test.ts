@@ -69,6 +69,67 @@ describe('article 13.6 same-language reminder', () => {
     expect(panelFromCase(record).article136Reminder).toBeNull();
   });
 
+  it('reminds when a later English reply follows a Spanish one on a Spanish filing', async () => {
+    const replies = [spanishReplies[0], englishReply];
+    const record = await analyseTicket({
+      summary,
+      description,
+      created,
+      agentPublicReplies: replies,
+      publicComments: replies,
+      llmEnabled: false,
+    });
+    expect(record.filingLanguage).toBe('es');
+    expect(panelFromCase(record, 'SUP-14').article136Reminder).toBe(ARTICLE_136_REMINDER);
+    const covered = explainCoverage(record.points, replies);
+    expect(record.answered).toEqual(covered.map((row) => row.answered));
+    const decision = evaluateClose(record, replies.map((body) => ({ author: 'agent' as const, public: true, body })));
+    expect(decision.result).toBe(record.answered.every(Boolean) && record.hasPublicReply);
+  });
+
+  it('stays quiet for Spanish replies only, including a motivated refusal', async () => {
+    const replies = [
+      'Hemos abonado los 48 € del recibo duplicado de marzo.',
+      'No podemos devolver los 48 € porque la lectura del contador coincide con la tarifa contratada.',
+    ];
+    const record = await analyseTicket({
+      summary,
+      description,
+      created,
+      agentPublicReplies: replies,
+      publicComments: replies,
+      llmEnabled: false,
+    });
+    expect(panelFromCase(record).article136Reminder).toBeNull();
+  });
+
+  it('reminds when an English filing receives a Spanish reply', async () => {
+    const record = await analyseTicket({
+      summary: 'Duplicate charge',
+      description: 'This is unacceptable. I demand a refund because you have charged this account twice.',
+      created,
+      agentPublicReplies: ['Hemos abonado los 48 € del recibo duplicado de marzo.'],
+      publicComments: ['Hemos abonado los 48 € del recibo duplicado de marzo.'],
+      llmEnabled: false,
+    });
+    expect(record.filingLanguage).toBe('en');
+    expect(record.isComplaint).toBe(true);
+    expect(panelFromCase(record).article136Reminder).toBe(ARTICLE_136_REMINDER);
+  });
+
+  it('stays quiet when the only public reply is too short to judge', async () => {
+    const record = await analyseTicket({
+      summary,
+      description,
+      created,
+      agentPublicReplies: ['Ok.'],
+      publicComments: ['Ok.'],
+      llmEnabled: false,
+    });
+    expect(record.filingLanguage).toBe('es');
+    expect(panelFromCase(record).article136Reminder).toBeNull();
+  });
+
   it('stays quiet for an hours question and when there is no public reply', async () => {
     const hours = await analyseTicket({
       summary: 'Horario',

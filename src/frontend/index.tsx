@@ -186,7 +186,7 @@ const App = () => {
           setReason(readTextAreaValue(event));
         }}
       />
-      {confirm.hint ? <Text>{confirm.hint}</Text> : null}
+      <Text>{confirm.hint ?? ''}</Text>
       <Stack space="space.100">
         <Button appearance="primary" isDisabled={confirm.disabled} onClick={() => void decide('confirmComplaint')}>
           Confirm complaint
